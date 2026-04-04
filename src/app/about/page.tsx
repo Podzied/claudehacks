@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "About | Claude Hacks @ Ohio State",
-  description: "Learn about Claude Hacks — a 3-day hackathon powered by Claude AI at The Ohio State University.",
+  description: "Learn about Claude Hacks — a hackathon powered by Claude AI at The Ohio State University.",
 };
 
 const tracks = [
@@ -57,7 +57,7 @@ const rules = [
   "All code must be written during the hackathon. Pre-existing libraries and frameworks are allowed.",
   "Projects must use the Claude API in a meaningful way.",
   "You may use any programming language, framework, or platform.",
-  "All projects must be submitted by the deadline (10:00 AM, April 19).",
+  "All projects must be submitted by the deadline (1:00 PM, Sunday April 19).",
   "Judging criteria: Innovation, Technical Complexity, Impact, and Presentation.",
   "Be respectful, inclusive, and follow the Code of Conduct at all times.",
 ];
@@ -76,8 +76,8 @@ export default function AboutPage() {
               About <span className="text-gradient">Claude Hacks</span>
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed">
-              A 3-day hackathon bringing together students from all backgrounds
-              to build innovative projects powered by Claude AI. April 17–19, 2026.
+              A hackathon bringing together students from all backgrounds
+              to build innovative projects powered by Claude AI. April 17 &amp; 19, 2026.
             </p>
           </FadeIn>
         </div>
@@ -91,9 +91,9 @@ export default function AboutPage() {
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { day: "Day 1", title: "Kickoff", desc: "Opening ceremony, team formation, workshops, and the hack begins!", color: "from-primary/20" },
-              { day: "Day 2", title: "Build", desc: "Full day of hacking with workshops, mentors, and activities.", color: "from-accent/20" },
-              { day: "Day 3", title: "Demo", desc: "Submit projects, present to judges, and awards ceremony.", color: "from-primary/20" },
+              { day: "Friday 6–8 PM", title: "Kickoff", desc: "Opening ceremony, team formation, Claude API workshop, and hacking begins!", color: "from-primary/20" },
+              { day: "Sat (async)", title: "Build", desc: "Continue hacking on your own or with your team. Build something amazing!", color: "from-accent/20" },
+              { day: "Sunday 12–3 PM", title: "Demo", desc: "Submit projects, present to judges, and awards ceremony.", color: "from-primary/20" },
             ].map((d, i) => (
               <FadeIn key={d.day} delay={i * 0.1}>
                 <div className="gradient-border p-6 rounded-2xl h-full group hover:bg-surface-light/20 transition-colors">

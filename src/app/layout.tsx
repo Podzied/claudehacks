@@ -4,18 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Claude Hacks @ Ohio State | April 17–19, 2026",
-  description: "A 3-day hackathon powered by Claude AI, hosted by the Claude Builders Club at The Ohio State University. Pomerene Hall 280.",
+  title: "Claude Hacks @ Ohio State | April 17 & 19, 2026",
+  description: "A hackathon powered by Claude AI, hosted by the Claude Builders Club at The Ohio State University. Pomerene 280.",
   openGraph: {
     title: "Claude Hacks @ Ohio State",
-    description: "Build the future with AI. A 3-day hackathon at The Ohio State University, April 17–19, 2026. API credits, prizes, and more.",
+    description: "Build the future with AI. A hackathon at The Ohio State University, April 17 & 19, 2026. API credits, prizes, and more.",
     type: "website",
     siteName: "Claude Hacks",
   },
   twitter: {
     card: "summary_large_image",
     title: "Claude Hacks @ Ohio State",
-    description: "Build the future with AI. A 3-day hackathon at The Ohio State University, April 17–19, 2026.",
+    description: "Build the future with AI. A hackathon at The Ohio State University, April 17 & 19, 2026.",
   },
   metadataBase: new URL("https://claudehacks.com"),
 };

@@ -14,12 +14,12 @@ export default function Footer() {
               <span className="font-display font-bold text-lg">Claude Hacks</span>
             </div>
             <p className="text-sm text-text-muted leading-relaxed max-w-sm">
-              A 3-day hackathon powered by Claude AI, hosted by the Claude Builders Club
+              A hackathon powered by Claude AI, hosted by the Claude Builders Club
               at The Ohio State University.
             </p>
             <div className="flex items-center gap-2 mt-5">
               <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-              <span className="text-xs text-text-muted font-mono">April 17–19, 2026</span>
+              <span className="text-xs text-text-muted font-mono">April 17 &amp; 19, 2026</span>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
               >
                 claudebuildersclub@gmail.com
               </a>
-              <p>Pomerene Hall 280, The Ohio State University</p>
+              <p>Pomerene 280, The Ohio State University</p>
               <p>1760 Neil Ave, Columbus, OH 43210</p>
             </div>
           </div>

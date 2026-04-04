@@ -24,9 +24,9 @@ const config: Config = {
         accent: "#6A9BCC",
       },
       fontFamily: {
-        display: ["'Copernicus'", "ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"],
-        body: ["'Styrene A'", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["'Söhne Mono'", "ui-monospace", "monospace"],
+        display: ["'Source Serif 4'", "ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"],
+        body: ["'DM Sans'", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

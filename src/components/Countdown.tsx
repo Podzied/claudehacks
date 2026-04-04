@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const TARGET = new Date("2026-04-17T16:00:00-04:00").getTime();
+const TARGET = new Date("2026-04-17T18:00:00-04:00").getTime();
 
 function calc() {
   const now = Date.now();

@@ -5,31 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./FadeIn";
 
 const schedule = {
-  "Day 1 — April 17": [
-    { time: "4:00 PM", event: "Check-in & Registration", type: "main" },
-    { time: "5:00 PM", event: "Opening Ceremony & Keynote", type: "main" },
-    { time: "6:00 PM", event: "Dinner & Team Formation", type: "food" },
-    { time: "7:00 PM", event: "Hacking Begins!", type: "highlight" },
-    { time: "9:00 PM", event: "Workshop: Getting Started with Claude API", type: "workshop" },
-    { time: "11:00 PM", event: "Late Night Snacks", type: "food" },
+  "Friday — April 17": [
+    { time: "6:00 PM", event: "Check-in & Welcome", type: "main" },
+    { time: "6:15 PM", event: "Opening Ceremony & Kickoff", type: "highlight" },
+    { time: "6:45 PM", event: "Team Formation & Hacking Begins", type: "highlight" },
+    { time: "7:30 PM", event: "Workshop: Getting Started with Claude API", type: "workshop" },
+    { time: "8:00 PM", event: "End of Day 1 — Continue hacking on your own!", type: "main" },
   ],
-  "Day 2 — April 18": [
-    { time: "8:00 AM", event: "Breakfast", type: "food" },
-    { time: "10:00 AM", event: "Workshop: Advanced Prompt Engineering", type: "workshop" },
-    { time: "12:00 PM", event: "Lunch", type: "food" },
-    { time: "2:00 PM", event: "Workshop: Building AI Agents", type: "workshop" },
-    { time: "4:00 PM", event: "Mentor Office Hours", type: "main" },
-    { time: "6:00 PM", event: "Dinner", type: "food" },
-    { time: "8:00 PM", event: "Fun Activities & Games", type: "highlight" },
-    { time: "11:00 PM", event: "Midnight Snacks", type: "food" },
-  ],
-  "Day 3 — April 19": [
-    { time: "8:00 AM", event: "Breakfast", type: "food" },
-    { time: "10:00 AM", event: "Hacking Ends — Submissions Due", type: "highlight" },
-    { time: "11:00 AM", event: "Project Expo & Judging", type: "main" },
-    { time: "1:00 PM", event: "Lunch", type: "food" },
-    { time: "2:00 PM", event: "Closing Ceremony & Awards", type: "highlight" },
-    { time: "3:30 PM", event: "Wrap Up & Goodbye", type: "main" },
+  "Sunday — April 19": [
+    { time: "12:00 PM", event: "Check-in & Hacking Continues", type: "main" },
+    { time: "1:00 PM", event: "Submissions Due", type: "highlight" },
+    { time: "1:15 PM", event: "Project Demos & Judging", type: "main" },
+    { time: "2:30 PM", event: "Closing Ceremony & Awards", type: "highlight" },
+    { time: "3:00 PM", event: "Wrap Up & Goodbye", type: "main" },
   ],
 };
 
@@ -58,13 +46,13 @@ export default function Schedule() {
         <FadeIn>
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-center mb-4">Schedule</h2>
           <p className="text-text-muted text-center mb-12 max-w-md mx-auto">
-            Three days of hacking, learning, and building with Claude AI.
+            Two sessions of hacking, learning, and building with Claude AI.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="flex justify-center gap-2 mb-10">
-            {days.map((day, i) => (
+            {days.map((day) => (
               <button
                 key={day}
                 onClick={() => setActiveDay(day)}
@@ -74,7 +62,7 @@ export default function Schedule() {
                     : "glass text-text-muted hover:text-text"
                 }`}
               >
-                Day {i + 1}
+                {day.split(" — ")[0]}
               </button>
             ))}
           </div>

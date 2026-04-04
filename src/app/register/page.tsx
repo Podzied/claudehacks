@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Register | Claude Hacks @ Ohio State",
-  description: "Sign up for Claude Hacks — a 3-day hackathon powered by Claude AI at The Ohio State University.",
+  description: "Sign up for Claude Hacks — a hackathon powered by Claude AI at The Ohio State University.",
 };
 
 export default function RegisterPage() {
@@ -19,7 +19,7 @@ export default function RegisterPage() {
             </div>
             <h1 className="text-5xl sm:text-6xl font-display font-bold mb-4">Register</h1>
             <p className="text-lg text-text-muted">
-              Secure your spot at Claude Hacks. April 17–19, 2026.
+              Secure your spot at Claude Hacks. April 17 &amp; 19, 2026.
             </p>
           </div>
         </FadeIn>

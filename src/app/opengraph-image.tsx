@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Claude Hacks @ Ohio State — April 17–19, 2026";
+export const alt = "Claude Hacks @ Ohio State — April 17 & 19, 2026";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -65,7 +65,7 @@ export default function OGImage() {
             marginBottom: 0,
           }}
         >
-          April 17–19, 2026 · The Ohio State University
+          April 17 &amp; 19, 2026 · The Ohio State University
         </p>
         <p
           style={{
