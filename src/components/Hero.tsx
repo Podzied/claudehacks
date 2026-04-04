@@ -20,23 +20,23 @@ function ClaudeLogo({ className }: { className?: string }) {
 }
 
 const floatingIcons = [
-  { x: "10%", y: "20%", delay: 0, size: 40, opacity: 0.08 },
-  { x: "85%", y: "15%", delay: 1.5, size: 56, opacity: 0.06 },
-  { x: "75%", y: "75%", delay: 3, size: 48, opacity: 0.07 },
-  { x: "15%", y: "70%", delay: 2, size: 36, opacity: 0.05 },
-  { x: "50%", y: "85%", delay: 4, size: 32, opacity: 0.04 },
+  { x: "10%", y: "20%", delay: 0, size: 40, opacity: 0.1 },
+  { x: "85%", y: "15%", delay: 1.5, size: 56, opacity: 0.07 },
+  { x: "75%", y: "75%", delay: 3, size: 48, opacity: 0.08 },
+  { x: "15%", y: "70%", delay: 2, size: 36, opacity: 0.06 },
+  { x: "50%", y: "85%", delay: 4, size: 32, opacity: 0.05 },
 ];
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden -mt-20 pt-20">
       {/* Grid background */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 grid-pattern opacity-40" />
 
-      {/* Gradient orbs — layered for depth */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[150px] animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/6 rounded-full blur-[130px] animate-float" style={{ animationDelay: "-3s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/4 rounded-full blur-[100px] animate-float" style={{ animationDelay: "-5s" }} />
+      {/* Soft gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/[0.06] rounded-full blur-[150px] animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/[0.05] rounded-full blur-[130px] animate-float" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/[0.03] rounded-full blur-[100px] animate-float" style={{ animationDelay: "-5s" }} />
 
       {/* Floating Claude logos */}
       {floatingIcons.map((icon, i) => (
@@ -55,7 +55,7 @@ export default function Hero() {
             ease: "easeInOut",
           }}
         >
-          <ClaudeLogo className={`w-[${icon.size}px] h-[${icon.size}px]`} />
+          <ClaudeLogo className="w-10 h-10" />
         </motion.div>
       ))}
 
@@ -67,7 +67,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-6"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 border border-primary/20 backdrop-blur-sm">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/15">
             <ClaudeLogo className="w-12 h-12 text-primary" />
           </div>
         </motion.div>
@@ -83,7 +83,7 @@ export default function Hero() {
             <span className="text-xs sm:text-sm text-text-secondary font-mono">
               April 17–19, 2026
             </span>
-            <span className="w-px h-3 bg-border-light" />
+            <span className="w-px h-3 bg-border" />
             <span className="text-xs sm:text-sm text-text-secondary font-mono">
               Pomerene Hall 280 &middot; Ohio State
             </span>
@@ -160,7 +160,7 @@ export default function Hero() {
             { label: "Free API Credits", icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" },
           ].map((item, i) => (
             <span key={item.label} className="hidden sm:flex items-center gap-2">
-              {i > 0 && <span className="w-px h-4 bg-border-light -ml-3 mr-3" />}
+              {i > 0 && <span className="w-px h-4 bg-border -ml-3 mr-3" />}
               <svg className="w-3.5 h-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
               </svg>

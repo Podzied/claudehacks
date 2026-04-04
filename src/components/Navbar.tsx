@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass-strong shadow-lg shadow-black/20" : "bg-transparent"
+        scrolled ? "glass-strong shadow-sm shadow-black/5" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">

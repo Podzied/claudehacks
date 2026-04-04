@@ -135,12 +135,12 @@ export default function RegisterForm() {
           <div>
             <label className={labelClass}>Full Name *</label>
             <input name="fullName" value={form.fullName} onChange={handleChange} className={inputClass("fullName")} placeholder="John Doe" />
-            {errors.fullName && <p className="text-red-400 text-xs mt-1.5">{errors.fullName}</p>}
+            {errors.fullName && <p className="text-red-600 text-xs mt-1.5">{errors.fullName}</p>}
           </div>
           <div>
             <label className={labelClass}>Email *</label>
             <input name="email" type="email" value={form.email} onChange={handleChange} className={inputClass("email")} placeholder="you@osu.edu" />
-            {errors.email && <p className="text-red-400 text-xs mt-1.5">{errors.email}</p>}
+            {errors.email && <p className="text-red-600 text-xs mt-1.5">{errors.email}</p>}
           </div>
           <div>
             <label className={labelClass}>Phone</label>
@@ -149,7 +149,7 @@ export default function RegisterForm() {
           <div>
             <label className={labelClass}>University *</label>
             <input name="university" value={form.university} onChange={handleChange} className={inputClass("university")} />
-            {errors.university && <p className="text-red-400 text-xs mt-1.5">{errors.university}</p>}
+            {errors.university && <p className="text-red-600 text-xs mt-1.5">{errors.university}</p>}
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@ export default function RegisterForm() {
           <div>
             <label className={labelClass}>Major *</label>
             <input name="major" value={form.major} onChange={handleChange} className={inputClass("major")} placeholder="Computer Science" />
-            {errors.major && <p className="text-red-400 text-xs mt-1.5">{errors.major}</p>}
+            {errors.major && <p className="text-red-600 text-xs mt-1.5">{errors.major}</p>}
           </div>
           <div>
             <label className={labelClass}>Graduation Year *</label>
@@ -174,7 +174,7 @@ export default function RegisterForm() {
                 <option key={y} value={y}>{y}</option>
               ))}
             </select>
-            {errors.graduationYear && <p className="text-red-400 text-xs mt-1.5">{errors.graduationYear}</p>}
+            {errors.graduationYear && <p className="text-red-600 text-xs mt-1.5">{errors.graduationYear}</p>}
           </div>
         </div>
       </div>
@@ -194,7 +194,7 @@ export default function RegisterForm() {
               <option value="intermediate">Intermediate — A few hackathons</option>
               <option value="advanced">Advanced — Many hackathons</option>
             </select>
-            {errors.experience && <p className="text-red-400 text-xs mt-1.5">{errors.experience}</p>}
+            {errors.experience && <p className="text-red-600 text-xs mt-1.5">{errors.experience}</p>}
           </div>
           <div>
             <label className={labelClass}>Team Size *</label>
@@ -205,7 +205,7 @@ export default function RegisterForm() {
               <option value="3">3 members</option>
               <option value="4">4 members</option>
             </select>
-            {errors.teamSize && <p className="text-red-400 text-xs mt-1.5">{errors.teamSize}</p>}
+            {errors.teamSize && <p className="text-red-600 text-xs mt-1.5">{errors.teamSize}</p>}
           </div>
           <div>
             <label className={labelClass}>Preferred Track *</label>
@@ -216,7 +216,7 @@ export default function RegisterForm() {
               <option value="health">Health & Wellness</option>
               <option value="open">Open Innovation</option>
             </select>
-            {errors.track && <p className="text-red-400 text-xs mt-1.5">{errors.track}</p>}
+            {errors.track && <p className="text-red-600 text-xs mt-1.5">{errors.track}</p>}
           </div>
           <div>
             <label className={labelClass}>T-Shirt Size *</label>
@@ -226,7 +226,7 @@ export default function RegisterForm() {
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>
-            {errors.tshirt && <p className="text-red-400 text-xs mt-1.5">{errors.tshirt}</p>}
+            {errors.tshirt && <p className="text-red-600 text-xs mt-1.5">{errors.tshirt}</p>}
           </div>
           <div>
             <label className={labelClass}>Dietary Restrictions</label>
@@ -247,7 +247,7 @@ export default function RegisterForm() {
       </div>
 
       {status === "error" && (
-        <div className="glass border-red-500/20 rounded-xl p-4 text-sm text-red-400">
+        <div className="glass border-red-500/20 rounded-xl p-4 text-sm text-red-600">
           Something went wrong. Please try again or email us at claudebuildersclub@gmail.com.
         </div>
       )}

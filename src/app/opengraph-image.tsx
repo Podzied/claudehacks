@@ -16,32 +16,42 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%)",
-          fontFamily: "system-ui, sans-serif",
+          background: "#FAF9F5",
+          fontFamily: "Georgia, serif",
+          position: "relative",
         }}
       >
+        {/* Subtle gradient accent */}
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 80,
-            height: 80,
-            borderRadius: 20,
-            background: "linear-gradient(135deg, #D97757, #CB6CE6)",
-            marginBottom: 32,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 6,
+            background: "linear-gradient(90deg, #D97757, #C15F3C)",
           }}
-        >
-          <span style={{ color: "white", fontSize: 36, fontWeight: 700 }}>CH</span>
-        </div>
+        />
+
+        {/* Claude constellation icon */}
+        <svg width="72" height="72" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="30" r="6" fill="#D97757" />
+          <circle cx="60" cy="90" r="6" fill="#D97757" />
+          <circle cx="30" cy="60" r="6" fill="#D97757" />
+          <circle cx="90" cy="60" r="6" fill="#D97757" />
+          <circle cx="38.8" cy="38.8" r="6" fill="#D97757" />
+          <circle cx="81.2" cy="38.8" r="6" fill="#D97757" />
+          <circle cx="38.8" cy="81.2" r="6" fill="#D97757" />
+          <circle cx="81.2" cy="81.2" r="6" fill="#D97757" />
+        </svg>
+
         <h1
           style={{
-            fontSize: 72,
-            fontWeight: 800,
-            background: "linear-gradient(135deg, #D97757, #CB6CE6)",
-            backgroundClip: "text",
-            color: "transparent",
+            fontSize: 80,
+            fontWeight: 700,
+            color: "#141413",
             margin: 0,
+            marginTop: 24,
             lineHeight: 1.1,
           }}
         >
@@ -50,22 +60,36 @@ export default function OGImage() {
         <p
           style={{
             fontSize: 28,
-            color: "#a0a0b0",
+            color: "#544F47",
             marginTop: 16,
             marginBottom: 0,
           }}
         >
-          April 17–19, 2026 &middot; The Ohio State University
+          April 17–19, 2026 · The Ohio State University
         </p>
         <p
           style={{
             fontSize: 20,
-            color: "#707080",
+            color: "#B0AEA5",
             marginTop: 12,
           }}
         >
-          Build the future with AI
+          Build the future with AI · Pomerene Hall 280
         </p>
+
+        {/* Bottom bar */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 40,
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+          }}
+        >
+          <span style={{ fontSize: 16, color: "#B0AEA5" }}>Powered by</span>
+          <span style={{ fontSize: 16, color: "#D97757", fontWeight: 600 }}>Claude AI</span>
+        </div>
       </div>
     ),
     { ...size }
