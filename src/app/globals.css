@@ -37,11 +37,11 @@ h1, h2, h3, h4, h5 {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.7;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(217, 119, 87, 0.05) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 80% 60%, rgba(106, 155, 204, 0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(217, 119, 87, 0.03) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(217, 119, 87, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 60%, rgba(106, 155, 204, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(217, 119, 87, 0.04) 0%, transparent 50%);
 }
 
 /* Glass card effect — light theme */
@@ -66,6 +66,12 @@ h1, h2, h3, h4, h5 {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(20, 20, 19, 0.04), 0 0 0 1px rgba(232, 230, 220, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-border:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(20, 20, 19, 0.06), 0 0 0 1px rgba(232, 230, 220, 0.6);
 }
 
 .gradient-border::before {
@@ -85,7 +91,7 @@ h1, h2, h3, h4, h5 {
 .btn-glow {
   position: relative;
   background: linear-gradient(135deg, #D97757, #C15F3C);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-glow::before {
@@ -101,11 +107,38 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-glow:hover::before {
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .btn-glow:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 119, 87, 0.25);
+}
+
+.btn-glow:active {
+  transform: translateY(0);
+}
+
+/* Shimmer effect for accent elements */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
 }
 
 /* Noise texture overlay — very subtle on light */
@@ -119,18 +152,35 @@ h1, h2, h3, h4, h5 {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Grid pattern — light */
+/* Grid pattern — dot grid for modern feel */
 .grid-pattern {
-  background-image:
-    linear-gradient(rgba(232, 230, 220, 0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 230, 220, 0.5) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-image: radial-gradient(circle, rgba(200, 198, 188, 0.5) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 /* Custom focus styles */
 *:focus-visible {
   outline: 2px solid #D97757;
   outline-offset: 2px;
+}
+
+/* Animated gradient text */
+.text-gradient-animated {
+  background: linear-gradient(135deg, #D97757, #C15F3C, #D97757);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Glow ring on hover */
+.glow-ring {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-ring:hover {
+  box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.1), 0 4px 20px rgba(217, 119, 87, 0.08);
 }
 
 @layer utilities {

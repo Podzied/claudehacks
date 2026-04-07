@@ -6,23 +6,18 @@ import FadeIn from "./FadeIn";
 
 const schedule = {
   "Friday — April 17": [
-    { time: "6:00 PM", event: "Check-in & Welcome", type: "main" },
-    { time: "6:15 PM", event: "Opening Ceremony & Kickoff", type: "highlight" },
-    { time: "6:45 PM", event: "Team Formation & Hacking Begins", type: "highlight" },
-    { time: "7:30 PM", event: "Workshop: Getting Started with Claude API", type: "workshop" },
+    { time: "5:30 PM", event: "Check-in & Food", type: "main" },
+    { time: "6:30 PM", event: "Introduction & Kickoff", type: "highlight" },
+    { time: "7:00 PM", event: "In-Person Work Time & Hacking Begins", type: "highlight" },
     { time: "8:00 PM", event: "End of Day 1 — Continue hacking on your own!", type: "main" },
   ],
   "Saturday — April 18 (Virtual)": [
     { time: "All Day", event: "Hacking Continues (work remotely with your team)", type: "main" },
-    { time: "2:00 PM", event: "Virtual Office Hours & Mentor Check-ins", type: "workshop" },
-    { time: "5:00 PM", event: "Optional Virtual Progress Share", type: "main" },
   ],
   "Sunday — April 19": [
-    { time: "11:00 AM", event: "Check-in & Final Hacking", type: "main" },
-    { time: "11:30 AM", event: "Submissions Due", type: "highlight" },
-    { time: "12:00 PM", event: "Project Demos & Judging", type: "highlight" },
-    { time: "1:30 PM", event: "Closing Ceremony & Awards", type: "highlight" },
-    { time: "2:00 PM", event: "Wrap Up & Goodbye", type: "main" },
+    { time: "10:00 AM", event: "Check-in", type: "main" },
+    { time: "11:15 AM", event: "Projects Due", type: "highlight" },
+    { time: "12:00 PM", event: "Judging Starts", type: "highlight" },
   ],
 };
 

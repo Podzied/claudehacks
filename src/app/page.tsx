@@ -48,20 +48,20 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Highlights */}
+      {/* Highlights — bento grid */}
       <section className="py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {highlights.map((h, i) => (
               <FadeIn key={h.stat} delay={i * 0.1}>
-                <div className="gradient-border p-6 rounded-2xl text-center group hover:bg-surface-light/30 transition-colors">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="gradient-border p-6 sm:p-8 rounded-2xl text-center group">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">
                     {h.icon}
                   </div>
-                  <div className="text-2xl sm:text-3xl font-display font-bold text-gradient mb-1">
+                  <div className="text-2xl sm:text-4xl font-display font-bold text-gradient mb-1.5">
                     {h.stat}
                   </div>
-                  <div className="text-xs sm:text-sm text-text-muted">{h.label}</div>
+                  <div className="text-xs sm:text-sm text-text-muted font-medium">{h.label}</div>
                 </div>
               </FadeIn>
             ))}
@@ -98,11 +98,12 @@ export default function Home() {
       <FAQ />
 
       {/* CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-primary-subtle" />
-        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
+            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Limited to 100 participants</p>
             <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">Ready to build?</h2>
             <p className="text-text-muted mb-10 text-lg">
               Spots are limited. Register now to secure your place at Claude Hacks.

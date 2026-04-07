@@ -34,10 +34,11 @@ const config: Config = {
         "gradient-primary-subtle": "linear-gradient(135deg, rgba(217,119,87,0.08), rgba(193,95,60,0.04))",
       },
       animation: {
-        "gradient-shift": "gradient-shift 8s ease infinite",
+        "gradient-shift": "gradient-shift 4s ease infinite",
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "slide-up": "slide-up 0.5s ease-out",
+        "fade-in": "fade-in 0.6s ease-out",
       },
       keyframes: {
         "gradient-shift": {
@@ -55,6 +56,10 @@ const config: Config = {
         "slide-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },

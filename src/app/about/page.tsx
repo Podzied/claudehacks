@@ -39,7 +39,7 @@ const rules = [
   "All code must be written during the hackathon. Pre-existing libraries and frameworks are allowed.",
   "Projects must use the Claude API in a meaningful way.",
   "You may use any programming language, framework, or platform.",
-  "All projects must be submitted by the deadline (11:30 AM, Sunday April 19).",
+  "All projects must be submitted by the deadline (11:15 AM, Sunday April 19).",
   "Judging criteria: Innovation, Technical Complexity, Impact, and Presentation.",
   "Be respectful, inclusive, and follow the Code of Conduct at all times.",
 ];
@@ -73,9 +73,9 @@ export default function AboutPage() {
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { day: "Friday 6–8 PM", title: "Kickoff", desc: "Opening ceremony, team formation, Claude API workshop, and hacking begins!", color: "from-primary/20" },
-              { day: "Saturday (Virtual)", title: "Build", desc: "Continue hacking remotely with your team. Virtual office hours and mentor check-ins available.", color: "from-accent/20" },
-              { day: "Sunday 11 AM–2 PM", title: "Demo", desc: "Check-in at 11 AM, submissions due 11:30 AM, judging at 12 PM, and awards ceremony.", color: "from-primary/20" },
+              { day: "Friday 5:30–8 PM", title: "Kickoff", desc: "Check-in & food at 5:30, introduction at 6:30, then in-person work time from 7–8 PM.", color: "from-primary/20" },
+              { day: "Saturday (Virtual)", title: "Build", desc: "Continue hacking remotely with your team.", color: "from-accent/20" },
+              { day: "Sunday 10 AM+", title: "Demo", desc: "Check-in at 10 AM, projects due 11:15 AM, judging starts at 12 PM.", color: "from-primary/20" },
             ].map((d, i) => (
               <FadeIn key={d.day} delay={i * 0.1}>
                 <div className="gradient-border p-6 rounded-2xl h-full group hover:bg-surface-light/20 transition-colors">

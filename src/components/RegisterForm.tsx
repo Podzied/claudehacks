@@ -432,6 +432,7 @@ export default function RegisterForm() {
                       className={inputClass(`member_${i}_resumeLink`)}
                       placeholder="Google Drive, Dropbox, etc."
                     />
+                    <p className="text-xs text-text-muted mt-1">Shared with sponsors for internship &amp; job opportunities</p>
                   </div>
                 </div>
               </div>
