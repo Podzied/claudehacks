@@ -12,12 +12,17 @@ const schedule = {
     { time: "7:30 PM", event: "Workshop: Getting Started with Claude API", type: "workshop" },
     { time: "8:00 PM", event: "End of Day 1 — Continue hacking on your own!", type: "main" },
   ],
+  "Saturday — April 18 (Virtual)": [
+    { time: "All Day", event: "Hacking Continues (work remotely with your team)", type: "main" },
+    { time: "2:00 PM", event: "Virtual Office Hours & Mentor Check-ins", type: "workshop" },
+    { time: "5:00 PM", event: "Optional Virtual Progress Share", type: "main" },
+  ],
   "Sunday — April 19": [
-    { time: "12:00 PM", event: "Check-in & Hacking Continues", type: "main" },
-    { time: "1:00 PM", event: "Submissions Due", type: "highlight" },
-    { time: "1:15 PM", event: "Project Demos & Judging", type: "main" },
-    { time: "2:30 PM", event: "Closing Ceremony & Awards", type: "highlight" },
-    { time: "3:00 PM", event: "Wrap Up & Goodbye", type: "main" },
+    { time: "11:00 AM", event: "Check-in & Final Hacking", type: "main" },
+    { time: "11:30 AM", event: "Submissions Due", type: "highlight" },
+    { time: "12:00 PM", event: "Project Demos & Judging", type: "highlight" },
+    { time: "1:30 PM", event: "Closing Ceremony & Awards", type: "highlight" },
+    { time: "2:00 PM", event: "Wrap Up & Goodbye", type: "main" },
   ],
 };
 
@@ -46,7 +51,7 @@ export default function Schedule() {
         <FadeIn>
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-center mb-4">Schedule</h2>
           <p className="text-text-muted text-center mb-12 max-w-md mx-auto">
-            Two sessions of hacking, learning, and building with Claude AI.
+            Three days of hacking, learning, and building with Claude AI.
           </p>
         </FadeIn>
 

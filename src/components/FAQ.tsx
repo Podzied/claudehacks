@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Where is the venue?",
-    a: "Claude Hacks will be held at Pomerene 280, 1760 Neil Ave, Columbus, OH 43210 on The Ohio State University campus. Friday 6–8 PM and Sunday 12–3 PM.",
+    a: "Claude Hacks will be held at Pomerene 280, 1760 Neil Ave, Columbus, OH 43210 on The Ohio State University campus. Friday 6–8 PM (in-person), Saturday (virtual), and Sunday 11 AM–2 PM (in-person).",
   },
 ];
 

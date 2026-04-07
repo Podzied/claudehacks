@@ -1,28 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
 
+interface MemberData {
+  fullName: string;
+  email: string;
+  phone: string;
+  major: string;
+  minor: string;
+  graduationYear: string;
+  dietary: string;
+  resumeLink: string;
+  linkedin: string;
+  languagePreference: string;
+}
+
+interface RegistrationBody {
+  teamStatus: string;
+  teamSize: number;
+  teamName: string;
+  members: MemberData[];
+  track: string;
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body: RegistrationBody = await req.json();
 
-    const {
-      fullName,
-      email,
-      phone,
-      university,
-      major,
-      graduationYear,
-      experience,
-      teamSize,
-      track,
-      dietary,
-      tshirt,
-      howHeard,
-    } = body;
+    const { teamStatus, teamSize, teamName, members, track } = body;
 
     // Validate required fields
-    if (!fullName || !email || !university || !major || !graduationYear || !experience || !teamSize || !track || !tshirt) {
+    if (!teamStatus || !track || !members || members.length === 0) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    // Only name, email, and phone are required
+    for (const m of members) {
+      if (!m.fullName || !m.email || !m.phone) {
+        return NextResponse.json({ error: "Name, email, and phone are required for all members" }, { status: 400 });
+      }
     }
 
     // If Google Sheets credentials are configured, save to sheet
@@ -39,38 +54,42 @@ export async function POST(req: NextRequest) {
 
       const sheets = google.sheets({ version: "v4", auth });
 
+      // One row per member, with team info on each row
+      const rows = members.map((m) => [
+        new Date().toISOString(),
+        teamStatus,
+        teamSize.toString(),
+        teamName || "",
+        m.fullName,
+        m.email,
+        m.phone,
+        m.major || "",
+        m.minor || "",
+        m.graduationYear || "",
+        m.dietary || "",
+        m.resumeLink || "",
+        m.linkedin || "",
+        m.languagePreference || "",
+        track,
+      ]);
+
       await sheets.spreadsheets.values.append({
         spreadsheetId: sheetId,
-        range: "Sheet1!A:M",
+        range: "Sheet1!A:O",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [
-            [
-              new Date().toISOString(),
-              fullName,
-              email,
-              phone || "",
-              university,
-              major,
-              graduationYear,
-              experience,
-              teamSize,
-              track,
-              dietary || "",
-              tshirt,
-              howHeard || "",
-            ],
-          ],
+          values: rows,
         },
       });
     } else {
       // Log to console if no Google Sheets configured
       console.log("Registration (no Google Sheets configured):", {
         timestamp: new Date().toISOString(),
-        fullName,
-        email,
-        university,
-        major,
+        teamStatus,
+        teamSize,
+        teamName,
+        track,
+        members: members.map((m) => ({ name: m.fullName, email: m.email })),
       });
     }
 
