@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import Schedule from "@/components/Schedule";
 import FAQ from "@/components/FAQ";
 import FadeIn from "@/components/FadeIn";
-import Link from "next/link";
 
 const highlights = [
   {
@@ -108,12 +107,14 @@ export default function Home() {
             <p className="text-text-muted mb-10 text-lg">
               Spots are limited. Register now to secure your place at Claude Hacks.
             </p>
-            <Link
-              href="/register"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
             >
               Register Now
-            </Link>
+            </a>
           </FadeIn>
         </div>
       </section>

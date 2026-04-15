@@ -131,12 +131,14 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.65 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
-            href="/register"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
           >
             Register Now
-          </Link>
+          </a>
           <Link
             href="/about"
             className="group glass glow-ring text-text-secondary px-10 py-4 rounded-full text-lg font-medium hover:text-text transition-colors"

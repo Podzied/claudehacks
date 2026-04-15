@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -191,12 +190,14 @@ export default function AboutPage() {
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">Sound exciting?</h2>
             <p className="text-text-muted mb-10">Register now to reserve your spot.</p>
-            <Link
-              href="/register"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
             >
               Register Now
-            </Link>
+            </a>
           </FadeIn>
         </div>
       </section>
