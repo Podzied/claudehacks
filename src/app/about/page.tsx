@@ -146,6 +146,7 @@ export default function AboutPage() {
               { name: "TBA", role: "Google", initials: "G" },
               { name: "TBA", role: "IGS Energy", initials: "IGS" },
               { name: "TBA", role: "AWS", initials: "AWS" },
+              { name: "TBA", role: "Vertiv", initials: "V" },
             ].map((judge, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="gradient-border p-6 rounded-2xl text-center group hover:bg-surface-light/20 transition-colors">

@@ -62,9 +62,7 @@ function SponsorLogo({ name }: { name: "anthropic" | "osu" | "igs" }) {
       );
     case "igs":
       return (
-        <div className="w-14 h-14 rounded-xl bg-[#00A651] flex items-center justify-center">
-          <span className="text-white font-display font-bold text-lg">IGS</span>
-        </div>
+        <img src="/igs-logo.svg" alt="IGS Energy" className="w-14 h-14" />
       );
   }
 }

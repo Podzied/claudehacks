@@ -1,21 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220">
-  <!-- Block O with gray border -->
-  <g transform="translate(150, 65)">
-    <!-- Outer octagon (gray border) -->
-    <polygon points="0,-52 37,-37 52,0 37,37 0,52 -37,37 -52,0 -37,-37" fill="#666" stroke="none"/>
-    <!-- Inner red octagon -->
-    <polygon points="0,-45 32,-32 45,0 32,32 0,45 -32,32 -45,0 -32,-32" fill="#BB0000" stroke="none"/>
-    <!-- Inner gray octagon (hole border) -->
-    <polygon points="0,-26 18,-18 26,0 18,18 0,26 -18,18 -26,0 -18,-18" fill="#666" stroke="none"/>
-    <!-- Inner white octagon (hole) -->
-    <polygon points="0,-20 14,-14 20,0 14,14 0,20 -14,14 -20,0 -14,-14" fill="white" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <!-- Block O -->
+  <g transform="translate(150, 72)">
+    <!-- Outer octagon - dark gray border -->
+    <path d="M-18,-56 L18,-56 L56,-18 L56,18 L18,56 L-18,56 L-56,18 L-56,-18 Z" fill="#666666"/>
+    <!-- Scarlet fill -->
+    <path d="M-14,-50 L14,-50 L50,-14 L50,14 L14,50 L-14,50 L-50,14 L-50,-14 Z" fill="#BB0000"/>
+    <!-- Inner border gray -->
+    <path d="M-10,-28 L10,-28 L28,-10 L28,10 L10,28 L-10,28 L-28,10 L-28,-10 Z" fill="#666666"/>
+    <!-- Inner cutout white -->
+    <path d="M-7,-23 L7,-23 L23,-7 L23,7 L7,23 L-7,23 L-23,7 L-23,-7 Z" fill="white"/>
   </g>
-  <!-- Horizontal rules -->
-  <line x1="30" y1="135" x2="270" y2="135" stroke="#666" stroke-width="1.5"/>
-  <!-- THE OHIO STATE text -->
-  <text x="150" y="160" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" fill="#666" letter-spacing="3">THE OHIO STATE</text>
-  <!-- UNIVERSITY text -->
-  <text x="150" y="190" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" fill="#666" letter-spacing="3">UNIVERSITY</text>
-  <!-- Bottom rule -->
-  <line x1="65" y1="200" x2="235" y2="200" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Top horizontal rule -->
+  <line x1="40" y1="145" x2="260" y2="145" stroke="#666666" stroke-width="2"/>
+
+  <!-- THE OHIO STATE -->
+  <text x="150" y="173" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#666666" letter-spacing="4" font-variant="small-caps">THE OHIO STATE</text>
+
+  <!-- UNIVERSITY -->
+  <text x="150" y="205" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#666666" letter-spacing="4" font-variant="small-caps">UNIVERSITY</text>
+
+  <!-- Bottom horizontal rule -->
+  <line x1="65" y1="218" x2="235" y2="218" stroke="#666666" stroke-width="2"/>
 </svg>

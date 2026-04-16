@@ -200,9 +200,7 @@ export default function Hero() {
             </div>
             {/* IGS Energy */}
             <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
-              <div className="h-6 w-6 rounded-md bg-[#00A651] flex items-center justify-center">
-                <span className="text-white font-display font-bold text-[10px]">IGS</span>
-              </div>
+              <img src="/igs-logo.svg" alt="IGS Energy" className="h-6 w-6" />
               <span className="text-sm sm:text-base font-display font-semibold text-text-secondary">IGS Energy</span>
             </div>
             {/* AWS */}
@@ -213,6 +211,13 @@ export default function Hero() {
                 <path d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z"/>
               </svg>
               <span className="text-sm sm:text-base font-display font-semibold text-text-secondary">AWS</span>
+            </div>
+            {/* Vertiv */}
+            <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+              <svg className="h-5 w-5 text-[#003C71]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 9.5l3.5 2.5L12 7l6.5 5L22 9.5 12 2zM12 10l-6.5 5L2 12.5 12 20l10-7.5L18.5 15 12 10z"/>
+              </svg>
+              <span className="text-sm sm:text-base font-display font-semibold text-text-secondary">Vertiv</span>
             </div>
           </div>
         </motion.div>
