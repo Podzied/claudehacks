@@ -14,7 +14,7 @@
 
 - Friday 5:30-8 PM: Kickoff, check-in, food, introductions, in-person work
 - Saturday: Virtual hacking day, continue building remotely
-- Sunday 11 AM+: Project submissions due 11 AM, judging at 12 PM
+- Sunday 11 AM+: Project submissions due 11 AM, judging at 12 PM, food at 1 PM
 
 ## Tracks
 
@@ -48,6 +48,10 @@
 ## Registration
 
 Registration is closed. All 100 spots have been filled.
+
+## Community
+
+- Discord: https://discord.gg/Re7FCAkS
 
 ## Contact
 

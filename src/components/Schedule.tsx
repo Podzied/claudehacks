@@ -17,6 +17,7 @@ const schedule = {
   "Sunday, April 19": [
     { time: "11:00 AM", event: "Projects Due", type: "highlight" },
     { time: "12:00 PM", event: "Judging Starts", type: "highlight" },
+    { time: "1:00 PM", event: "Food", type: "food" },
   ],
 };
 
