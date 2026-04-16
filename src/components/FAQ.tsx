@@ -39,7 +39,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24" id="faq">
+    <section className="py-24 border-t border-border" id="faq">
       <div className="max-w-2xl mx-auto px-6">
         <FadeIn>
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-center mb-4">FAQ</h2>

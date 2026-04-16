@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* What is Claude Hacks */}
-      <section className="py-24">
+      <section className="py-24 border-t border-border">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6">
@@ -97,7 +97,7 @@ export default function Home() {
       <FAQ />
 
       {/* CTA */}
-      <section className="py-28 relative overflow-hidden">
+      <section className="py-28 relative overflow-hidden border-t border-border">
         <div className="absolute inset-0 bg-gradient-primary-subtle" />
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">

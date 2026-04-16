@@ -41,7 +41,7 @@ export default function Schedule() {
   const [activeDay, setActiveDay] = useState(days[0]);
 
   return (
-    <section className="py-24" id="schedule">
+    <section className="py-24 border-t border-border" id="schedule">
       <div className="max-w-3xl mx-auto px-6">
         <FadeIn>
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-center mb-4">Schedule</h2>
