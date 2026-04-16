@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220">
+  <!-- Block O with gray border -->
+  <g transform="translate(150, 65)">
+    <!-- Outer octagon (gray border) -->
+    <polygon points="0,-52 37,-37 52,0 37,37 0,52 -37,37 -52,0 -37,-37" fill="#666" stroke="none"/>
+    <!-- Inner red octagon -->
+    <polygon points="0,-45 32,-32 45,0 32,32 0,45 -32,32 -45,0 -32,-32" fill="#BB0000" stroke="none"/>
+    <!-- Inner gray octagon (hole border) -->
+    <polygon points="0,-26 18,-18 26,0 18,18 0,26 -18,18 -26,0 -18,-18" fill="#666" stroke="none"/>
+    <!-- Inner white octagon (hole) -->
+    <polygon points="0,-20 14,-14 20,0 14,14 0,20 -14,14 -20,0 -14,-14" fill="white" stroke="none"/>
+  </g>
+  <!-- Horizontal rules -->
+  <line x1="30" y1="135" x2="270" y2="135" stroke="#666" stroke-width="1.5"/>
+  <!-- THE OHIO STATE text -->
+  <text x="150" y="160" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" fill="#666" letter-spacing="3">THE OHIO STATE</text>
+  <!-- UNIVERSITY text -->
+  <text x="150" y="190" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" fill="#666" letter-spacing="3">UNIVERSITY</text>
+  <!-- Bottom rule -->
+  <line x1="65" y1="200" x2="235" y2="200" stroke="#666" stroke-width="1.5"/>
+</svg>

@@ -67,33 +67,13 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-6"
         >
-          <div className="inline-flex items-center gap-5 sm:gap-6">
-            {/* Ohio State wordmark */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#BB0000] flex items-center justify-center shadow-lg shadow-[#BB0000]/20 shrink-0">
-                <span className="text-white font-display font-bold text-xl sm:text-2xl leading-none">O</span>
-              </div>
-              <div className="text-left leading-tight">
-                <span className="block text-xs sm:text-sm font-display font-bold text-[#BB0000]">The Ohio State</span>
-                <span className="block text-[10px] sm:text-xs font-display font-semibold text-[#BB0000]/70">University</span>
-              </div>
-            </div>
+          <div className="inline-flex items-center gap-6 sm:gap-8">
+            {/* Ohio State full logo */}
+            <img src="/osu-logo.svg" alt="The Ohio State University" className="h-20 sm:h-24 w-auto" />
             {/* x */}
-            <span className="text-text-muted font-display font-medium text-xl sm:text-2xl select-none">&times;</span>
-            {/* Anthropic / Claude mark */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.3041 3.541h-3.6718l6.696 16.918H24Z"/>
-                  <path d="M10.5363 3.5409L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Z"/>
-                  <path d="M10.1651 13.7641l2.2914-5.9456 2.2914 5.9456Z"/>
-                </svg>
-              </div>
-              <div className="text-left leading-tight">
-                <span className="block text-xs sm:text-sm font-display font-bold text-primary">Claude</span>
-                <span className="block text-[10px] sm:text-xs font-display font-semibold text-primary/70">by Anthropic</span>
-              </div>
-            </div>
+            <span className="text-text-muted font-display font-medium text-2xl sm:text-3xl select-none">&times;</span>
+            {/* Anthropic A mark */}
+            <img src="/anthropic-logo.svg" alt="Anthropic" className="h-12 sm:h-14 w-auto" />
           </div>
         </motion.div>
 
