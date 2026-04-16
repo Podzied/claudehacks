@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
-  <!-- Block O -->
-  <g transform="translate(150, 72)">
-    <!-- Outer octagon - dark gray border -->
-    <path d="M-18,-56 L18,-56 L56,-18 L56,18 L18,56 L-18,56 L-56,18 L-56,-18 Z" fill="#666666"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <!-- Block O - taller, more oval like the real OSU logo -->
+  <g transform="translate(150, 78)">
+    <!-- Outer shape - gray border, tall oval octagon -->
+    <path d="M-22,-62 L22,-62 L54,-30 L54,30 L22,62 L-22,62 L-54,30 L-54,-30 Z" fill="#666666"/>
     <!-- Scarlet fill -->
-    <path d="M-14,-50 L14,-50 L50,-14 L50,14 L14,50 L-14,50 L-50,14 L-50,-14 Z" fill="#BB0000"/>
-    <!-- Inner border gray -->
-    <path d="M-10,-28 L10,-28 L28,-10 L28,10 L10,28 L-10,28 L-28,10 L-28,-10 Z" fill="#666666"/>
-    <!-- Inner cutout white -->
-    <path d="M-7,-23 L7,-23 L23,-7 L23,7 L7,23 L-7,23 L-23,7 L-23,-7 Z" fill="white"/>
+    <path d="M-18,-56 L18,-56 L48,-26 L48,26 L18,56 L-18,56 L-48,26 L-48,-26 Z" fill="#BB0000"/>
+    <!-- Inner gray border -->
+    <path d="M-10,-32 L10,-32 L28,-14 L28,14 L10,32 L-10,32 L-28,14 L-28,-14 Z" fill="#666666"/>
+    <!-- Inner white cutout - taller oval -->
+    <path d="M-7,-27 L7,-27 L23,-11 L23,11 L7,27 L-7,27 L-23,11 L-23,-11 Z" fill="white"/>
   </g>
 
   <!-- Top horizontal rule -->
-  <line x1="40" y1="145" x2="260" y2="145" stroke="#666666" stroke-width="2"/>
+  <line x1="30" y1="158" x2="270" y2="158" stroke="#666666" stroke-width="2"/>
 
   <!-- THE OHIO STATE -->
-  <text x="150" y="173" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#666666" letter-spacing="4" font-variant="small-caps">THE OHIO STATE</text>
+  <text x="150" y="188" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#666666" letter-spacing="3">THE OHIO STATE</text>
 
   <!-- UNIVERSITY -->
-  <text x="150" y="205" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#666666" letter-spacing="4" font-variant="small-caps">UNIVERSITY</text>
+  <text x="150" y="222" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#666666" letter-spacing="3">UNIVERSITY</text>
 
   <!-- Bottom horizontal rule -->
-  <line x1="65" y1="218" x2="235" y2="218" stroke="#666666" stroke-width="2"/>
+  <line x1="60" y1="236" x2="240" y2="236" stroke="#666666" stroke-width="2"/>
 </svg>
