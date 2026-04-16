@@ -38,18 +38,18 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="px-4 py-2 text-sm text-text-secondary hover:text-text transition-colors rounded-lg hover:bg-surface-light/50"
+              className="px-5 py-2.5 text-sm font-medium text-text-secondary hover:text-text transition-all rounded-full border border-transparent hover:border-border hover:bg-surface-light/50"
             >
               {l.label}
             </Link>
           ))}
-          <span className="ml-3 bg-surface text-text-muted border border-border px-6 py-2.5 rounded-full text-sm font-semibold cursor-default">
-            Sold Out
+          <span className="ml-2 bg-surface text-text-muted border border-border px-6 py-2.5 rounded-full text-sm font-semibold cursor-default">
+            At Capacity
           </span>
         </div>
 
@@ -89,7 +89,7 @@ export default function Navbar() {
             className="md:hidden overflow-hidden glass-strong"
           >
             <div className="px-6 py-6 space-y-1">
-              {[...navLinks, { href: "#", label: "Sold Out" }].map((l) => (
+              {[...navLinks, { href: "#", label: "At Capacity" }].map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}

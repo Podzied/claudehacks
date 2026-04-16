@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "What do I need to bring?",
-    a: "Just your laptop and charger. We'll provide everything else — food, drinks, workspace, Wi-Fi, and API credits.",
+    a: "Just your laptop and charger. We'll provide everything else: food, drinks, workspace, Wi-Fi, and API credits.",
   },
   {
     q: "Will there be mentors?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Where is the venue?",
-    a: "Claude Hacks will be held at Pomerene 280, 1760 Neil Ave, Columbus, OH 43210 on The Ohio State University campus. Friday 5:30–8 PM (in-person), Saturday (virtual), and Sunday starting 10 AM (in-person).",
+    a: "Claude Hacks will be held at Pomerene 280, 1760 Neil Ave, Columbus, OH 43210 on The Ohio State University campus. Friday 5:30–8 PM (in-person), Saturday (virtual), and Sunday starting 11 AM (in-person).",
   },
 ];
 

@@ -14,7 +14,7 @@
 
 - Friday 5:30-8 PM: Kickoff, check-in, food, introductions, in-person work
 - Saturday: Virtual hacking day, continue building remotely
-- Sunday 10 AM+: Check-in, project submissions due 11:15 AM, judging at 12 PM
+- Sunday 11 AM+: Project submissions due 11 AM, judging at 12 PM
 
 ## Tracks
 
@@ -42,7 +42,7 @@
 - All code must be written during the hackathon
 - Projects must use the Claude API meaningfully
 - Any programming language, framework, or platform allowed
-- Submissions due by 11:15 AM Sunday April 19
+- Submissions due by 11:00 AM Sunday April 19
 - Judging criteria: Innovation, Technical Complexity, Impact, Presentation
 
 ## Registration

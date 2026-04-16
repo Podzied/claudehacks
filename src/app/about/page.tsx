@@ -3,13 +3,13 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "About | Claude Hacks @ Ohio State",
-  description: "Learn about Claude Hacks — a hackathon powered by Claude AI at The Ohio State University.",
+  description: "Learn about Claude Hacks, a hackathon powered by Claude AI at The Ohio State University.",
 };
 
 const tracks = [
   {
     name: "Open",
-    desc: "Build anything you want with Claude AI — no restrictions on topic or domain. The most creative and impactful project wins.",
+    desc: "Build anything you want with Claude AI. No restrictions on topic or domain. The most creative and impactful project wins.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
@@ -28,9 +28,9 @@ const tracks = [
 ];
 
 const prizes = [
-  { place: "1st Place", amount: "$750 Credits + $300", desc: "Best overall project — API credits and cash prize" },
-  { place: "2nd Place", amount: "$500 Credits", desc: "Runner-up — API credits" },
-  { place: "3rd Place", amount: "$250 Credits", desc: "Third place — API credits" },
+  { place: "1st Place", amount: "$750 Credits + $300", desc: "Best overall project. API credits and cash prize." },
+  { place: "2nd Place", amount: "$500 Credits", desc: "Runner-up. API credits." },
+  { place: "3rd Place", amount: "$250 Credits", desc: "Third place. API credits." },
 ];
 
 const rules = [
@@ -38,7 +38,7 @@ const rules = [
   "All code must be written during the hackathon. Pre-existing libraries and frameworks are allowed.",
   "Projects must use the Claude API in a meaningful way.",
   "You may use any programming language, framework, or platform.",
-  "All projects must be submitted by the deadline (11:15 AM, Sunday April 19).",
+  "All projects must be submitted by the deadline (11:00 AM, Sunday April 19).",
   "Judging criteria: Innovation, Technical Complexity, Impact, and Presentation.",
   "Be respectful, inclusive, and follow the Code of Conduct at all times.",
 ];
@@ -74,7 +74,7 @@ export default function AboutPage() {
             {[
               { day: "Friday 5:30–8 PM", title: "Kickoff", desc: "Check-in & food at 5:30, introduction at 6:30, then in-person work time from 7–8 PM.", color: "from-primary/20" },
               { day: "Saturday (Virtual)", title: "Build", desc: "Continue hacking remotely with your team.", color: "from-accent/20" },
-              { day: "Sunday 10 AM+", title: "Demo", desc: "Check-in at 10 AM, projects due 11:15 AM, judging starts at 12 PM.", color: "from-primary/20" },
+              { day: "Sunday 11 AM+", title: "Demo", desc: "Projects due at 11 AM, judging starts at 12 PM.", color: "from-primary/20" },
             ].map((d, i) => (
               <FadeIn key={d.day} delay={i * 0.1}>
                 <div className="gradient-border p-6 rounded-2xl h-full group hover:bg-surface-light/20 transition-colors">

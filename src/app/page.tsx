@@ -105,7 +105,7 @@ export default function Home() {
             <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">100 participants registered</p>
             <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">We&apos;re at capacity!</h2>
             <p className="text-text-muted mb-10 text-lg">
-              Registration is closed — all 100 spots have been filled. See you at the event!
+              Registration is closed. All 100 spots have been filled. See you at the event!
             </p>
             <span className="inline-block bg-gradient-to-r from-primary/20 to-primary-dark/20 text-primary border border-primary/30 px-10 py-4 rounded-full text-lg font-semibold cursor-default">
               Registration Closed

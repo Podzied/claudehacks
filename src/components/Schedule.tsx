@@ -5,18 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./FadeIn";
 
 const schedule = {
-  "Friday — April 17": [
+  "Friday, April 17": [
     { time: "5:30 PM", event: "Check-in & Food", type: "main" },
     { time: "6:30 PM", event: "Introduction & Kickoff", type: "highlight" },
     { time: "7:00 PM", event: "In-Person Work Time & Hacking Begins", type: "highlight" },
-    { time: "8:00 PM", event: "End of Day 1 — Continue hacking on your own!", type: "main" },
+    { time: "8:00 PM", event: "End of Day 1. Continue hacking on your own!", type: "main" },
   ],
-  "Saturday — April 18 (Virtual)": [
+  "Saturday, April 18 (Virtual)": [
     { time: "All Day", event: "Hacking Continues (work remotely with your team)", type: "main" },
   ],
-  "Sunday — April 19": [
-    { time: "10:00 AM", event: "Check-in", type: "main" },
-    { time: "11:15 AM", event: "Projects Due", type: "highlight" },
+  "Sunday, April 19": [
+    { time: "11:00 AM", event: "Projects Due", type: "highlight" },
     { time: "12:00 PM", event: "Judging Starts", type: "highlight" },
   ],
 };
@@ -62,7 +61,7 @@ export default function Schedule() {
                     : "glass text-text-muted hover:text-text"
                 }`}
               >
-                {day.split(" — ")[0]}
+                {day.split(", ")[0]}
               </button>
             ))}
           </div>

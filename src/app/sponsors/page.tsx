@@ -11,21 +11,21 @@ const tiers = [
     name: "Platinum",
     gradient: "from-primary to-accent",
     sponsors: [
-      { name: "Anthropic", initials: "A", desc: "Creators of Claude AI — providing API credits and mentorship for all participants." },
+      { name: "Anthropic", desc: "Creators of Claude AI. Providing API credits and mentorship for all participants.", logo: "anthropic" as const },
     ],
   },
   {
     name: "Gold",
     gradient: "from-yellow-500 to-orange-500",
     sponsors: [
-      { name: "Ohio State CSE", initials: "OSU", desc: "The Department of Computer Science & Engineering at The Ohio State University." },
+      { name: "Ohio State CSE", desc: "The Department of Computer Science & Engineering at The Ohio State University.", logo: "osu" as const },
     ],
   },
   {
     name: "Silver",
     gradient: "from-text-muted to-border-light",
     sponsors: [
-      { name: "IGS Energy", initials: "IGS", desc: "Energy solutions provider supporting student innovation." },
+      { name: "IGS Energy", desc: "Energy solutions provider supporting student innovation.", logo: "igs" as const },
     ],
   },
 ];
@@ -38,6 +38,36 @@ const perks = [
   { text: "Branded prize category (Gold+ tiers)", icon: "trophy" },
   { text: "Access to project submissions and participant resumes", icon: "file" },
 ];
+
+function SponsorLogo({ name }: { name: "anthropic" | "osu" | "igs" }) {
+  switch (name) {
+    case "anthropic":
+      return (
+        <svg className="w-12 h-12 text-primary" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="30" r="5" fill="currentColor" />
+          <circle cx="60" cy="90" r="5" fill="currentColor" />
+          <circle cx="30" cy="60" r="5" fill="currentColor" />
+          <circle cx="90" cy="60" r="5" fill="currentColor" />
+          <circle cx="38.8" cy="38.8" r="5" fill="currentColor" />
+          <circle cx="81.2" cy="38.8" r="5" fill="currentColor" />
+          <circle cx="38.8" cy="81.2" r="5" fill="currentColor" />
+          <circle cx="81.2" cy="81.2" r="5" fill="currentColor" />
+        </svg>
+      );
+    case "osu":
+      return (
+        <div className="w-14 h-14 rounded-full bg-[#BB0000] flex items-center justify-center">
+          <span className="text-white font-display font-bold text-2xl">O</span>
+        </div>
+      );
+    case "igs":
+      return (
+        <div className="w-14 h-14 rounded-xl bg-[#00A651] flex items-center justify-center">
+          <span className="text-white font-display font-bold text-lg">IGS</span>
+        </div>
+      );
+  }
+}
 
 export default function SponsorsPage() {
   return (
@@ -73,8 +103,8 @@ export default function SponsorsPage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   {tier.sponsors.map((s) => (
                     <div key={s.name} className="gradient-border p-8 rounded-2xl text-center group hover:bg-surface-light/20 transition-colors">
-                      <div className={`w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br ${tier.gradient} flex items-center justify-center`}>
-                        <span className="text-white font-display font-bold">{s.initials}</span>
+                      <div className="w-16 h-16 mx-auto mb-5 flex items-center justify-center">
+                        <SponsorLogo name={s.logo} />
                       </div>
                       <h3 className="font-display font-bold text-lg mb-2">{s.name}</h3>
                       <p className="text-sm text-text-muted leading-relaxed">{s.desc}</p>

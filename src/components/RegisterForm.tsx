@@ -497,7 +497,7 @@ export default function RegisterForm() {
                   }`}
                 >
                   <span className="font-semibold text-sm block mb-1">Open</span>
-                  <p className="text-xs text-text-muted">Build anything you want with Claude AI — no restrictions on topic or domain.</p>
+                  <p className="text-xs text-text-muted">Build anything you want with Claude AI. No restrictions on topic or domain.</p>
                 </button>
 
                 <button
