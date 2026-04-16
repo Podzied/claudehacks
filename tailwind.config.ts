@@ -24,8 +24,8 @@ const config: Config = {
         accent: "#6A9BCC",
       },
       fontFamily: {
-        display: ["'Source Serif 4'", "ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"],
-        body: ["'DM Sans'", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["'Space Grotesk'", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["'Inter'", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
       backgroundImage: {

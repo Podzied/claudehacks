@@ -48,14 +48,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 btn-glow text-white px-6 py-2.5 rounded-full text-sm font-semibold"
-          >
-            Register
-          </a>
+          <span className="ml-3 bg-surface text-text-muted border border-border px-6 py-2.5 rounded-full text-sm font-semibold cursor-default">
+            Sold Out
+          </span>
         </div>
 
         {/* Mobile toggle */}
@@ -94,7 +89,7 @@ export default function Navbar() {
             className="md:hidden overflow-hidden glass-strong"
           >
             <div className="px-6 py-6 space-y-1">
-              {[...navLinks, { href: "https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header", label: "Register" }].map((l) => (
+              {[...navLinks, { href: "#", label: "Sold Out" }].map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}

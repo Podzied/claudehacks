@@ -1,0 +1,55 @@
+# Claude Hacks
+
+> A hackathon powered by Claude AI, hosted by the Claude Builders Club at The Ohio State University.
+
+## Event Details
+
+- Name: Claude Hacks
+- Dates: April 17-19, 2026
+- Location: Pomerene Hall 280, The Ohio State University, Columbus, OH 43210
+- Participants: 100 (registration closed, at capacity)
+- Website: https://claudehacks.com
+
+## Format
+
+- Friday 5:30-8 PM: Kickoff, check-in, food, introductions, in-person work
+- Saturday: Virtual hacking day, continue building remotely
+- Sunday 10 AM+: Check-in, project submissions due 11:15 AM, judging at 12 PM
+
+## Tracks
+
+- Open: Build anything with Claude AI, no restrictions on topic or domain
+- Sustainability: Build solutions addressing environmental or sustainability challenges
+
+## Prizes
+
+- 1st Place: $750 API Credits + $300 Cash
+- 2nd Place: $500 API Credits
+- 3rd Place: $250 API Credits
+- Total: $1,800+ in prizes
+
+## Judges From
+
+- NVIDIA
+- Meta
+- Google
+- IGS Energy
+- AWS
+
+## Rules
+
+- Teams of 1-4 members, all must be registered
+- All code must be written during the hackathon
+- Projects must use the Claude API meaningfully
+- Any programming language, framework, or platform allowed
+- Submissions due by 11:15 AM Sunday April 19
+- Judging criteria: Innovation, Technical Complexity, Impact, Presentation
+
+## Registration
+
+Registration is closed. All 100 spots have been filled.
+
+## Contact
+
+- Instagram: @claudeatohiostate
+- Hosted by: Claude Builders Club at Ohio State

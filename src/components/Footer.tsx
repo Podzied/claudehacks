@@ -32,7 +32,7 @@ export default function Footer() {
                 { label: "About", href: "/about" },
                 { label: "Club", href: "/info" },
                 { label: "Sponsors", href: "/sponsors" },
-                { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header" },
+                { label: "Registration Closed", href: "#" },
               ].map((link) => (
                 <Link
                   key={link.label}

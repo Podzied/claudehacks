@@ -141,9 +141,11 @@ export default function AboutPage() {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { name: "TBA", role: "Anthropic", initials: "A" },
-              { name: "TBA", role: "Ohio State CSE", initials: "OSU" },
-              { name: "TBA", role: "Industry Expert", initials: "IE" },
+              { name: "TBA", role: "NVIDIA", initials: "NV" },
+              { name: "TBA", role: "Meta", initials: "M" },
+              { name: "TBA", role: "Google", initials: "G" },
+              { name: "TBA", role: "IGS Energy", initials: "IGS" },
+              { name: "TBA", role: "AWS", initials: "AWS" },
             ].map((judge, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="gradient-border p-6 rounded-2xl text-center group hover:bg-surface-light/20 transition-colors">
@@ -188,16 +190,11 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-primary-subtle" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">Sound exciting?</h2>
-            <p className="text-text-muted mb-10">Register now to reserve your spot.</p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
-            >
-              Register Now
-            </a>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">We&apos;re at capacity!</h2>
+            <p className="text-text-muted mb-10">All 100 spots have been filled. See you at the event!</p>
+            <span className="inline-block bg-gradient-to-r from-primary/20 to-primary-dark/20 text-primary border border-primary/30 px-10 py-4 rounded-full text-lg font-semibold cursor-default">
+              Registration Closed
+            </span>
           </FadeIn>
         </div>
       </section>

@@ -102,19 +102,14 @@ export default function Home() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
-            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Limited to 100 participants</p>
-            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">Ready to build?</h2>
+            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">100 participants registered</p>
+            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">We&apos;re at capacity!</h2>
             <p className="text-text-muted mb-10 text-lg">
-              Spots are limited. Register now to secure your place at Claude Hacks.
+              Registration is closed — all 100 spots have been filled. See you at the event!
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScyRaZTEpDsV7DT4niejbaJ5V2daKkzslJ86j7pNoan8qTBhQ/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
-            >
-              Register Now
-            </a>
+            <span className="inline-block bg-gradient-to-r from-primary/20 to-primary-dark/20 text-primary border border-primary/30 px-10 py-4 rounded-full text-lg font-semibold cursor-default">
+              Registration Closed
+            </span>
           </FadeIn>
         </div>
       </section>
