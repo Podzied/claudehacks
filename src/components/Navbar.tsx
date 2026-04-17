@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/info", label: "Club" },
   { href: "/sponsors", label: "Sponsors" },
+  { href: "/submit", label: "Submit" },
 ];
 
 export default function Navbar() {
@@ -48,9 +49,12 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <span className="ml-2 bg-surface text-text-muted border border-border px-6 py-2.5 rounded-full text-sm font-semibold cursor-default">
-            At Capacity
-          </span>
+          <Link
+            href="/submit"
+            className="ml-2 btn-glow text-white px-6 py-2.5 rounded-full text-sm font-semibold"
+          >
+            Submit Project
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -89,7 +93,7 @@ export default function Navbar() {
             className="md:hidden overflow-hidden glass-strong"
           >
             <div className="px-6 py-6 space-y-1">
-              {[...navLinks, { href: "#", label: "At Capacity" }].map((l) => (
+              {navLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}

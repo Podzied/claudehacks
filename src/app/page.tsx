@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Schedule from "@/components/Schedule";
 import FAQ from "@/components/FAQ";
@@ -102,14 +103,17 @@ export default function Home() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
-            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">100 participants registered</p>
-            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">We&apos;re at capacity!</h2>
+            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Submissions are open</p>
+            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">Ready to submit?</h2>
             <p className="text-text-muted mb-10 text-lg">
-              Registration is closed. All 100 spots have been filled. See you at the event!
+              Projects are due by 11:00 AM on Sunday, April 19. Submit your project now!
             </p>
-            <span className="inline-block bg-gradient-to-r from-primary/20 to-primary-dark/20 text-primary border border-primary/30 px-10 py-4 rounded-full text-lg font-semibold cursor-default">
-              Registration Closed
-            </span>
+            <Link
+              href="/submit"
+              className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
+            >
+              Submit Project
+            </Link>
           </FadeIn>
         </div>
       </section>
