@@ -15,13 +15,6 @@ const tiers = [
     ],
   },
   {
-    name: "Gold",
-    gradient: "from-yellow-500 to-orange-500",
-    sponsors: [
-      { name: "Ohio State CSE", desc: "The Department of Computer Science & Engineering at The Ohio State University.", logo: "osu" as const },
-    ],
-  },
-  {
     name: "Silver",
     gradient: "from-text-muted to-border-light",
     sponsors: [
