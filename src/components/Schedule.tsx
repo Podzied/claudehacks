@@ -4,10 +4,25 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./FadeIn";
 
-const schedule = {
+interface ScheduleItem {
+  time: string;
+  event: string;
+  type: string;
+  link?: { href: string; label: string };
+}
+
+const schedule: Record<string, ScheduleItem[]> = {
   "Friday, April 17": [
     { time: "5:30 PM", event: "Check-in & Food", type: "main" },
-    { time: "6:30 PM", event: "Introduction & Kickoff", type: "highlight" },
+    {
+      time: "6:30 PM",
+      event: "Introduction & Kickoff",
+      type: "highlight",
+      link: {
+        href: "https://docs.google.com/presentation/d/1KjZ1kextPiGLsCK0yZkMbCp8jW1aVsuL/edit?usp=sharing&ouid=104681296212393054344&rtpof=true&sd=true",
+        label: "Slides",
+      },
+    },
     { time: "7:00 PM", event: "In-Person Work Time & Hacking Begins", type: "highlight" },
     { time: "8:00 PM", event: "End of Day 1. Continue hacking on your own!", type: "main" },
   ],
@@ -98,8 +113,18 @@ export default function Schedule() {
                     <div className="relative z-10">
                       <div className={`w-2.5 h-2.5 rounded-full ${typeDots[item.type]} ring-4 ring-bg`} />
                     </div>
-                    <div className={`flex-1 py-3 px-4 rounded-lg ${typeColors[item.type]} group-hover:bg-surface-light/50 transition-colors`}>
+                    <div className={`flex-1 py-3 px-4 rounded-lg ${typeColors[item.type]} group-hover:bg-surface-light/50 transition-colors flex items-center justify-between gap-3`}>
                       <span className="text-sm text-text">{item.event}</span>
+                      {item.link && (
+                        <a
+                          href={item.link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-bg/80 border border-border text-primary hover:bg-primary hover:text-white hover:border-primary transition-colors shrink-0"
+                        >
+                          {item.link.label} →
+                        </a>
+                      )}
                     </div>
                   </motion.div>
                 ))}
