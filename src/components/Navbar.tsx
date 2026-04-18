@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/schedule", label: "Schedule" },
   { href: "/info", label: "Club" },
   { href: "/sponsors", label: "Sponsors" },
-  { href: "/submit", label: "Submit" },
 ];
 
 export default function Navbar() {
