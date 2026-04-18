@@ -38,7 +38,7 @@ const rules = [
   "All code must be written during the hackathon. Pre-existing libraries and frameworks are allowed.",
   "Projects must use the Claude API in a meaningful way.",
   "You may use any programming language, framework, or platform.",
-  "All projects must be submitted by the deadline (11:00 AM, Sunday April 19).",
+  "All projects must be submitted by the deadline (11:00 AM EST, Sunday April 19).",
   "Judging criteria: Innovation, Technical Complexity, Impact, and Presentation.",
   "Be respectful, inclusive, and follow the Code of Conduct at all times.",
 ];

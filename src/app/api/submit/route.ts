@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import { isSubmissionsClosed } from "@/lib/deadline";
 
 interface SubmissionBody {
   teamName: string;
@@ -13,6 +14,10 @@ interface SubmissionBody {
 
 export async function POST(req: NextRequest) {
   try {
+    if (isSubmissionsClosed()) {
+      return NextResponse.json({ error: "Submissions are closed." }, { status: 403 });
+    }
+
     const body: SubmissionBody = await req.json();
 
     const { teamName, projectName, projectDescription, track, githubLink, demoLink, members } = body;

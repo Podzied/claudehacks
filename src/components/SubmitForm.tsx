@@ -50,7 +50,7 @@ function validate(form: SubmissionData): Errors {
 export default function SubmitForm() {
   const [form, setForm] = useState<SubmissionData>(initialForm);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error" | "closed">("idle");
   const [step, setStep] = useState(1);
   const [checkingRepo, setCheckingRepo] = useState(false);
 
@@ -150,6 +150,10 @@ export default function SubmitForm() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
+        if (res.status === 403) {
+          setStatus("closed");
+          return;
+        }
         if (data?.error && data.error.toLowerCase().includes("github")) {
           setErrors((prev) => ({ ...prev, githubLink: data.error }));
           setStatus("idle");
@@ -162,6 +166,26 @@ export default function SubmitForm() {
       setStatus("error");
     }
   };
+
+  if (status === "closed") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="text-center py-16"
+      >
+        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-text-muted/10 flex items-center justify-center">
+          <svg className="w-10 h-10 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 className="text-3xl font-display font-bold mb-4">Submissions Closed</h2>
+        <p className="text-text-muted max-w-md mx-auto">
+          The submission deadline has passed. Judging is now in progress.
+        </p>
+      </motion.div>
+    );
+  }
 
   if (status === "success") {
     return (

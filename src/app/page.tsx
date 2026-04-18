@@ -106,7 +106,7 @@ export default function Home() {
             <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Submissions are open</p>
             <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">Ready to submit?</h2>
             <p className="text-text-muted mb-10 text-lg">
-              Projects are due by 11:00 AM on Sunday, April 19. Submit your project now!
+              Projects are due by 11:00 AM EST on Sunday, April 19. Submit your project now!
             </p>
             <Link
               href="/submit"
