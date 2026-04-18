@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { google } from "googleapis";
+import { supabase } from "@/lib/supabase";
 
 interface SubmissionBody {
   teamName: string;
@@ -52,54 +52,20 @@ export async function POST(req: NextRequest) {
       // If GitHub API is unreachable, allow submission to proceed
     }
 
-    const serviceEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-    const privateKey = process.env.GOOGLE_PRIVATE_KEY;
-    const sheetId = process.env.GOOGLE_SHEET_ID;
+    // Insert into Supabase
+    const { error: dbError } = await supabase.from("submissions").insert({
+      team_name: teamName,
+      project_name: projectName,
+      project_description: projectDescription,
+      track,
+      github_link: githubLink,
+      demo_link: demoLink || null,
+      members,
+    });
 
-    if (serviceEmail && privateKey && sheetId) {
-      const auth = new google.auth.JWT({
-        email: serviceEmail,
-        key: privateKey.replace(/\\n/g, "\n"),
-        scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-      });
-
-      const sheets = google.sheets({ version: "v4", auth });
-
-      const memberNames = members.map((m) => m.fullName).join(", ");
-      const memberEmails = members.map((m) => m.email).join(", ");
-
-      const row = [
-        new Date().toISOString(),
-        teamName,
-        projectName,
-        projectDescription,
-        track,
-        githubLink,
-        demoLink || "",
-        memberNames,
-        memberEmails,
-        members.length.toString(),
-      ];
-
-      await sheets.spreadsheets.values.append({
-        spreadsheetId: sheetId,
-        range: "Submissions!A:J",
-        valueInputOption: "USER_ENTERED",
-        requestBody: {
-          values: [row],
-        },
-      });
-    } else {
-      console.log("Submission (no Google Sheets configured):", {
-        timestamp: new Date().toISOString(),
-        teamName,
-        projectName,
-        projectDescription,
-        track,
-        githubLink,
-        demoLink,
-        members: members.map((m) => ({ name: m.fullName, email: m.email })),
-      });
+    if (dbError) {
+      console.error("Supabase insert error:", dbError);
+      return NextResponse.json({ error: "Failed to save submission" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
