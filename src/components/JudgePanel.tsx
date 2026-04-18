@@ -337,8 +337,82 @@ export default function JudgePanel() {
           </motion.div>
         )}
 
-        {/* RATE */}
-        {stage === "rate" && selectedTeam && (
+        {/* RATE SUCCESS */}
+        {stage === "rate" && selectedTeam && rateStatus === "saved" && (
+          <motion.div
+            key="rate-success"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="gradient-border rounded-2xl p-10 text-center"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
+              className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center"
+            >
+              <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </motion.div>
+
+            <h2 className="font-display font-bold text-3xl mb-2">Rating Submitted</h2>
+            <p className="text-text-muted mb-1">
+              Thanks, <span className="text-text font-medium">{judgeName}</span>.
+            </p>
+            <p className="text-sm text-text-muted mb-8">
+              Your rating for <span className="text-text font-medium">{selectedTeam.project_name}</span> has been saved.
+            </p>
+
+            <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto mb-8">
+              {RUBRIC.map((r) => (
+                <div key={r.key} className="bg-surface/60 rounded-xl px-4 py-3">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-text-muted">
+                    {r.label}
+                  </div>
+                  <div className="font-display font-bold text-lg text-text tabular-nums">
+                    {scores[r.key]} <span className="text-text-muted text-xs font-body font-normal">/ {r.max}</span>
+                  </div>
+                </div>
+              ))}
+              <div className="bg-surface/60 rounded-xl px-4 py-3">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-text-muted">
+                  Code Review
+                </div>
+                <div className="font-display font-bold text-lg text-text tabular-nums">
+                  {selectedTeam.agent_score ?? "—"} <span className="text-text-muted text-xs font-body font-normal">/ 5</span>
+                </div>
+              </div>
+              <div className="bg-gradient-primary rounded-xl px-4 py-3 text-white">
+                <div className="text-[10px] font-mono uppercase tracking-wider opacity-80">
+                  Total
+                </div>
+                <div className="font-display font-bold text-lg tabular-nums">
+                  {totalScore} <span className="opacity-80 text-xs font-body font-normal">/ 50</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={() => setStage("team-list")}
+                className="btn-glow text-white px-8 py-3 rounded-full font-semibold"
+              >
+                Rate another team
+              </button>
+              <button
+                onClick={() => setRateStatus("idle")}
+                className="px-8 py-3 rounded-full font-semibold border border-border text-text-secondary hover:bg-surface transition-colors"
+              >
+                Edit this rating
+              </button>
+            </div>
+          </motion.div>
+        )}
+
+        {/* RATE FORM */}
+        {stage === "rate" && selectedTeam && rateStatus !== "saved" && (
           <motion.div
             key="rate"
             initial={{ opacity: 0, y: 10 }}
@@ -502,8 +576,7 @@ export default function JudgePanel() {
 
             {/* Submit */}
             <div className="flex items-center justify-between gap-4">
-              <div className="text-xs text-text-muted">
-                {rateStatus === "saved" && "Saved! You can update this rating anytime."}
+              <div className="text-xs">
                 {rateStatus === "error" && <span className="text-red-600">Failed to save. Try again.</span>}
               </div>
               <button
