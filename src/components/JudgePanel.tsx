@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
-import { JUDGES } from "@/lib/judges";
 
 interface Submission {
   id: number;
@@ -42,6 +41,7 @@ export default function JudgePanel() {
   const [authLoading, setAuthLoading] = useState(false);
 
   const [judgeName, setJudgeName] = useState("");
+  const [judgeNameInput, setJudgeNameInput] = useState("");
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [ratedIds, setRatedIds] = useState<Set<number>>(new Set());
   const [selectedTeam, setSelectedTeam] = useState<Submission | null>(null);
@@ -110,9 +110,11 @@ export default function JudgePanel() {
   };
 
   const selectJudge = async (name: string) => {
-    setJudgeName(name);
-    localStorage.setItem("ch_judge_name", name);
-    await loadSubmissions(name);
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    setJudgeName(trimmed);
+    localStorage.setItem("ch_judge_name", trimmed);
+    await loadSubmissions(trimmed);
     setStage("team-list");
   };
 
@@ -238,32 +240,42 @@ export default function JudgePanel() {
           </motion.form>
         )}
 
-        {/* JUDGE SELECT */}
+        {/* JUDGE NAME ENTRY */}
         {stage === "select-judge" && (
-          <motion.div
+          <motion.form
             key="select-judge"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="gradient-border p-8 rounded-2xl space-y-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              selectJudge(judgeNameInput);
+            }}
+            className="gradient-border p-8 rounded-2xl space-y-6"
           >
             <div>
               <h2 className="font-display font-bold text-2xl mb-2">Who are you?</h2>
-              <p className="text-sm text-text-muted">Select your name from the list.</p>
+              <p className="text-sm text-text-muted">Enter your name as it should appear on your ratings.</p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {JUDGES.map((j) => (
-                <button
-                  key={j.name}
-                  onClick={() => selectJudge(j.name)}
-                  className="p-4 rounded-xl border-2 border-border hover:border-primary/40 hover:bg-primary/5 text-left transition-all"
-                >
-                  <div className="font-semibold text-sm">{j.name}</div>
-                  <div className="text-xs text-text-muted mt-0.5">{j.company}</div>
-                </button>
-              ))}
+            <div>
+              <label className="block text-sm font-medium text-text-secondary mb-2">Your name</label>
+              <input
+                type="text"
+                value={judgeNameInput}
+                onChange={(e) => setJudgeNameInput(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl text-sm bg-surface border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/10 outline-none"
+                placeholder="e.g. Jane Smith (NVIDIA)"
+                autoFocus
+              />
             </div>
-          </motion.div>
+            <button
+              type="submit"
+              disabled={!judgeNameInput.trim()}
+              className="btn-glow text-white px-8 py-3 rounded-full font-semibold w-full disabled:opacity-50"
+            >
+              Continue
+            </button>
+          </motion.form>
         )}
 
         {/* TEAM LIST */}
