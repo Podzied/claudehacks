@@ -28,6 +28,30 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Verify GitHub repo is public
+    const repoMatch = githubLink.match(/github\.com\/([^/]+)\/([^/\s#?]+)/);
+    if (!repoMatch) {
+      return NextResponse.json({ error: "Invalid GitHub repository URL" }, { status: 400 });
+    }
+    const [, owner, repo] = repoMatch;
+    const repoName = repo.replace(/\.git$/, "");
+    try {
+      const ghRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}`, {
+        headers: { "Accept": "application/vnd.github.v3+json" },
+      });
+      if (ghRes.status === 404) {
+        return NextResponse.json({ error: "GitHub repository not found — make sure it exists and is public" }, { status: 400 });
+      }
+      if (ghRes.ok) {
+        const ghData = await ghRes.json();
+        if (ghData.private) {
+          return NextResponse.json({ error: "GitHub repository is private — please make it public before submitting" }, { status: 400 });
+        }
+      }
+    } catch {
+      // If GitHub API is unreachable, allow submission to proceed
+    }
+
     const serviceEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
     const privateKey = process.env.GOOGLE_PRIVATE_KEY;
     const sheetId = process.env.GOOGLE_SHEET_ID;

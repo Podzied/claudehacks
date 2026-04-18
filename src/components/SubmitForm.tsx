@@ -34,6 +34,8 @@ function validate(form: SubmissionData): Errors {
   if (!form.projectDescription.trim()) errors.projectDescription = "Project description is required";
   if (!form.track) errors.track = "Please select a track";
   if (!form.githubLink.trim()) errors.githubLink = "GitHub link is required";
+  else if (!/github\.com\/[^/]+\/[^/\s#?]+/.test(form.githubLink))
+    errors.githubLink = "Please enter a valid GitHub repository URL";
 
   form.members.forEach((m, i) => {
     if (!m.fullName.trim()) errors[`member_${i}_fullName`] = "Name is required";
@@ -50,6 +52,37 @@ export default function SubmitForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [step, setStep] = useState(1);
+  const [checkingRepo, setCheckingRepo] = useState(false);
+
+  const checkGitHubRepo = async (url: string) => {
+    // Extract owner/repo from GitHub URL
+    const match = url.match(/github\.com\/([^/]+)\/([^/\s#?]+)/);
+    if (!match) {
+      setErrors((prev) => ({ ...prev, githubLink: "Please enter a valid GitHub URL" }));
+      return;
+    }
+    const [, owner, repo] = match;
+    const repoName = repo.replace(/\.git$/, "");
+
+    setCheckingRepo(true);
+    try {
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repoName}`);
+      if (res.status === 404) {
+        setErrors((prev) => ({ ...prev, githubLink: "Repository not found — make sure it exists and is public" }));
+      } else if (res.ok) {
+        const data = await res.json();
+        if (data.private) {
+          setErrors((prev) => ({ ...prev, githubLink: "This repository is private — please make it public before submitting" }));
+        } else {
+          clearError("githubLink");
+        }
+      }
+    } catch {
+      // Network error — skip check, server-side will catch it
+    } finally {
+      setCheckingRepo(false);
+    }
+  };
 
   const clearError = (key: string) => {
     if (errors[key]) {
@@ -115,7 +148,15 @@ export default function SubmitForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("Failed");
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        if (data?.error && data.error.toLowerCase().includes("github")) {
+          setErrors((prev) => ({ ...prev, githubLink: data.error }));
+          setStatus("idle");
+          return;
+        }
+        throw new Error("Failed");
+      }
       setStatus("success");
     } catch {
       setStatus("error");
@@ -336,9 +377,21 @@ export default function SubmitForm() {
                       setForm((prev) => ({ ...prev, githubLink: e.target.value }));
                       clearError("githubLink");
                     }}
+                    onBlur={(e) => {
+                      if (e.target.value.trim()) checkGitHubRepo(e.target.value.trim());
+                    }}
                     className={inputClass("githubLink")}
                     placeholder="https://github.com/your-team/your-project"
                   />
+                  {checkingRepo && (
+                    <p className="text-xs text-text-muted mt-1.5 flex items-center gap-1.5">
+                      <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Checking repository...
+                    </p>
+                  )}
                   {errors.githubLink && <p className="text-red-600 text-xs mt-1.5">{errors.githubLink}</p>}
                 </div>
 
