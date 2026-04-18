@@ -73,6 +73,38 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to save submission" }, { status: 500 });
     }
 
+    // Notify Discord (best-effort, never blocks the response on failure)
+    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+    if (webhookUrl) {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            embeds: [
+              {
+                title: `New submission: ${projectName}`,
+                description: projectDescription.length > 400
+                  ? projectDescription.slice(0, 400) + "…"
+                  : projectDescription,
+                color: 14252375, // #D97757 Anthropic orange
+                fields: [
+                  { name: "Team", value: teamName, inline: true },
+                  { name: "Track", value: track, inline: true },
+                  { name: "Members", value: `${members.length} · ${members.map((m) => m.fullName).join(", ")}`, inline: false },
+                  { name: "GitHub", value: githubLink, inline: false },
+                  ...(demoLink ? [{ name: "Demo", value: demoLink, inline: false }] : []),
+                ],
+                timestamp: new Date().toISOString(),
+              },
+            ],
+          }),
+        });
+      } catch (err) {
+        console.error("Discord webhook failed:", err);
+      }
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Submission error:", error);
