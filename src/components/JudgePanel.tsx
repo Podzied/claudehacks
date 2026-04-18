@@ -13,6 +13,7 @@ interface Submission {
   github_link: string;
   demo_link: string | null;
   members: { fullName: string; email: string }[];
+  agent_score: number | null;
 }
 
 interface ExistingRating {
@@ -26,10 +27,10 @@ interface ExistingRating {
 type Stage = "passcode" | "select-judge" | "team-list" | "rate";
 
 const RUBRIC = [
-  { key: "innovation", label: "Innovation", desc: "Originality and creativity of the idea" },
-  { key: "technicalComplexity", label: "Technical Complexity", desc: "Difficulty of the engineering challenge" },
-  { key: "impact", label: "Impact", desc: "Potential to make a real difference" },
-  { key: "presentation", label: "Presentation", desc: "Clarity and quality of the demo" },
+  { key: "innovation", label: "Innovation / Coolness", desc: "Originality, creativity, and how impressive the idea is", max: 15 },
+  { key: "technicalComplexity", label: "Technical Complexity", desc: "Difficulty of the engineering challenge", max: 15 },
+  { key: "impact", label: "Impact", desc: "Potential to make a real difference", max: 5 },
+  { key: "presentation", label: "Presentation", desc: "Clarity and quality of the demo", max: 10 },
 ] as const;
 
 type RubricKey = typeof RUBRIC[number]["key"];
@@ -47,9 +48,9 @@ export default function JudgePanel() {
   const [selectedTeam, setSelectedTeam] = useState<Submission | null>(null);
 
   const [scores, setScores] = useState<Record<RubricKey, number>>({
-    innovation: 5,
-    technicalComplexity: 5,
-    impact: 5,
+    innovation: 8,
+    technicalComplexity: 8,
+    impact: 3,
     presentation: 5,
   });
   const [feedback, setFeedback] = useState("");
@@ -140,7 +141,7 @@ export default function JudgePanel() {
       });
       setFeedback(existing.feedback || "");
     } else {
-      setScores({ innovation: 5, technicalComplexity: 5, impact: 5, presentation: 5 });
+      setScores({ innovation: 5, technicalComplexity: 8, impact: 5, presentation: 5 });
       setFeedback("");
     }
   };
@@ -179,7 +180,9 @@ export default function JudgePanel() {
     setStage("passcode");
   };
 
-  const totalScore = scores.innovation + scores.technicalComplexity + scores.impact + scores.presentation;
+  const judgeSubtotal = scores.innovation + scores.technicalComplexity + scores.impact + scores.presentation;
+  const agentScore = selectedTeam?.agent_score ?? 0;
+  const totalScore = judgeSubtotal + agentScore;
 
   return (
     <div className="space-y-6">
@@ -387,9 +390,28 @@ export default function JudgePanel() {
                   </a>
                 )}
               </div>
-              <div className="mt-4 pt-4 border-t border-border text-xs text-text-muted">
-                <span className="font-medium">Members:</span>{" "}
-                {selectedTeam.members.map((m) => m.fullName).join(", ")}
+              <div className="mt-5 pt-5 border-t border-border">
+                <div className="text-xs font-mono uppercase tracking-wider text-text-muted mb-3">
+                  Team ({selectedTeam.members.length})
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {selectedTeam.members.map((m, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-2 bg-surface border border-border rounded-full pl-1.5 pr-3 py-1"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center text-white text-[10px] font-bold">
+                        {m.fullName
+                          .split(" ")
+                          .map((s) => s[0])
+                          .slice(0, 2)
+                          .join("")
+                          .toUpperCase()}
+                      </span>
+                      <span className="text-sm font-medium">{m.fullName}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -397,13 +419,16 @@ export default function JudgePanel() {
             <div className="gradient-border rounded-2xl p-6 space-y-6">
               <div>
                 <h3 className="font-display font-bold text-lg mb-1">Rubric</h3>
-                <p className="text-xs text-text-muted">Rate each category from 1 (poor) to 10 (excellent).</p>
+                <p className="text-xs text-text-muted">Rate each category from 1 to its maximum.</p>
               </div>
               {RUBRIC.map((r) => (
                 <div key={r.key}>
                   <div className="flex items-baseline justify-between mb-2">
                     <div>
-                      <label className="font-semibold text-sm">{r.label}</label>
+                      <label className="font-semibold text-sm">
+                        {r.label}{" "}
+                        <span className="text-text-muted font-normal text-xs">/ {r.max}</span>
+                      </label>
                       <p className="text-xs text-text-muted">{r.desc}</p>
                     </div>
                     <span className="font-display font-bold text-2xl text-gradient tabular-nums">
@@ -413,7 +438,7 @@ export default function JudgePanel() {
                   <input
                     type="range"
                     min={1}
-                    max={10}
+                    max={r.max}
                     step={1}
                     value={scores[r.key]}
                     onChange={(e) =>
@@ -422,16 +447,41 @@ export default function JudgePanel() {
                     className="w-full accent-primary"
                   />
                   <div className="flex justify-between text-[10px] text-text-muted mt-1 font-mono">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                    {Array.from({ length: r.max }, (_, i) => i + 1).map((n) => (
                       <span key={n}>{n}</span>
                     ))}
                   </div>
                 </div>
               ))}
 
+              {/* Agent code review (auto) */}
+              <div className="rounded-xl bg-surface/60 border border-dashed border-border p-4">
+                <div className="flex items-baseline justify-between mb-1">
+                  <div>
+                    <label className="font-semibold text-sm flex items-center gap-2">
+                      Code Review{" "}
+                      <span className="text-text-muted font-normal text-xs">/ 5</span>
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-accent/10 text-accent">
+                        Auto
+                      </span>
+                    </label>
+                    <p className="text-xs text-text-muted">Auto-graded by review agent (working code)</p>
+                  </div>
+                  <span className="font-display font-bold text-2xl text-gradient tabular-nums">
+                    {selectedTeam.agent_score ?? "—"}
+                  </span>
+                </div>
+                {selectedTeam.agent_score === null && (
+                  <p className="text-[11px] text-text-muted italic mt-2">Pending agent review</p>
+                )}
+              </div>
+
               <div className="pt-4 border-t border-border flex items-center justify-between">
                 <span className="text-sm text-text-muted">Total</span>
-                <span className="font-display font-bold text-3xl text-gradient">{totalScore} <span className="text-sm text-text-muted font-body font-normal">/ 40</span></span>
+                <span className="font-display font-bold text-3xl text-gradient">
+                  {totalScore}{" "}
+                  <span className="text-sm text-text-muted font-body font-normal">/ 50</span>
+                </span>
               </div>
             </div>
 

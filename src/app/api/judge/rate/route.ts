@@ -26,14 +26,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    for (const [name, val] of [
-      ["innovation", innovation],
-      ["technical_complexity", technicalComplexity],
-      ["impact", impact],
-      ["presentation", presentation],
-    ] as const) {
-      if (typeof val !== "number" || val < 1 || val > 10) {
-        return NextResponse.json({ error: `${name} must be between 1 and 10` }, { status: 400 });
+    const checks: [string, number, number][] = [
+      ["innovation", innovation, 15],
+      ["technical_complexity", technicalComplexity, 15],
+      ["impact", impact, 5],
+      ["presentation", presentation, 10],
+    ];
+    for (const [name, val, max] of checks) {
+      if (typeof val !== "number" || val < 1 || val > max) {
+        return NextResponse.json({ error: `${name} must be between 1 and ${max}` }, { status: 400 });
       }
     }
 
