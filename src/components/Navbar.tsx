@@ -12,6 +12,9 @@ const navLinks = [
   { href: "/sponsors", label: "Sponsors" },
 ];
 
+const SLIDES_URL =
+  "https://docs.google.com/presentation/d/1KjZ1kextPiGLsCK0yZkMbCp8jW1aVsuL/edit?usp=sharing&ouid=104681296212393054344&rtpof=true&sd=true";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -49,9 +52,20 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a
+            href={SLIDES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium text-text-secondary hover:text-primary transition-all rounded-full border border-border hover:border-primary/40 hover:bg-primary/5"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+            </svg>
+            Slides
+          </a>
           <Link
             href="/submit"
-            className="ml-2 btn-glow text-white px-6 py-2.5 rounded-full text-sm font-semibold"
+            className="btn-glow text-white px-6 py-2.5 rounded-full text-sm font-semibold"
           >
             Submit Project
           </Link>
@@ -103,6 +117,15 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
+              <a
+                href={SLIDES_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block px-4 py-3 text-primary hover:bg-primary/5 rounded-lg transition-colors font-medium"
+              >
+                Slides ↗
+              </a>
             </div>
           </motion.div>
         )}
