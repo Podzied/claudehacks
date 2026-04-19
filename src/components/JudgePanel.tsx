@@ -55,11 +55,16 @@ export default function JudgePanel() {
   });
   const [feedback, setFeedback] = useState("");
   const [rateStatus, setRateStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [trackFilter, setTrackFilter] = useState<"all" | "open" | "sustainability">("all");
 
   // Restore session from localStorage on mount
   useEffect(() => {
     const savedPass = localStorage.getItem("ch_judge_pass");
     const savedJudge = localStorage.getItem("ch_judge_name");
+    const savedFilter = localStorage.getItem("ch_judge_filter") as "all" | "open" | "sustainability" | null;
+    if (savedFilter === "open" || savedFilter === "sustainability" || savedFilter === "all") {
+      setTrackFilter(savedFilter);
+    }
     if (savedPass) {
       setPasscode(savedPass);
       if (savedJudge) {
@@ -298,6 +303,35 @@ export default function JudgePanel() {
               </p>
             </div>
 
+            {/* Track filter */}
+            <div className="flex flex-wrap gap-2">
+              {(["all", "open", "sustainability"] as const).map((t) => {
+                const count = t === "all"
+                  ? submissions.length
+                  : submissions.filter((s) => s.track === t).length;
+                const active = trackFilter === t;
+                return (
+                  <button
+                    key={t}
+                    onClick={() => {
+                      setTrackFilter(t);
+                      localStorage.setItem("ch_judge_filter", t);
+                    }}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      active
+                        ? "bg-gradient-primary text-white shadow-sm"
+                        : "bg-surface border border-border text-text-secondary hover:border-primary/40 hover:text-text"
+                    }`}
+                  >
+                    <span className="capitalize">{t === "all" ? "All tracks" : t}</span>
+                    <span className={`ml-2 text-xs font-mono ${active ? "opacity-80" : "text-text-muted"}`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
             {submissions.length === 0 && (
               <div className="gradient-border rounded-2xl p-8 text-center text-sm text-text-muted">
                 No submissions yet.
@@ -305,7 +339,9 @@ export default function JudgePanel() {
             )}
 
             <div className="grid gap-3">
-              {submissions.map((s) => {
+              {submissions
+                .filter((s) => trackFilter === "all" || s.track === trackFilter)
+                .map((s) => {
                 const rated = ratedIds.has(s.id);
                 return (
                   <button
@@ -333,6 +369,12 @@ export default function JudgePanel() {
                   </button>
                 );
               })}
+              {submissions.length > 0 &&
+                submissions.filter((s) => trackFilter === "all" || s.track === trackFilter).length === 0 && (
+                  <div className="gradient-border rounded-2xl p-8 text-center text-sm text-text-muted">
+                    No teams in this track.
+                  </div>
+                )}
             </div>
           </motion.div>
         )}
