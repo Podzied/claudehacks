@@ -14,6 +14,7 @@ interface Submission {
   demo_link: string | null;
   members: { fullName: string; email: string }[];
   agent_score: number | null;
+  agent_notes: string | null;
 }
 
 interface ExistingRating {
@@ -589,6 +590,16 @@ export default function JudgePanel() {
                 </div>
                 {selectedTeam.agent_score === null && (
                   <p className="text-[11px] text-text-muted italic mt-2">Pending agent review</p>
+                )}
+                {selectedTeam.agent_notes && (
+                  <div className="mt-3 pt-3 border-t border-border/60">
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-text-muted mb-1.5">
+                      Agent notes
+                    </div>
+                    <p className="text-xs text-text-secondary leading-relaxed">
+                      {selectedTeam.agent_notes}
+                    </p>
+                  </div>
                 )}
               </div>
 
