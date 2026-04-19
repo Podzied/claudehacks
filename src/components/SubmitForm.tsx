@@ -104,7 +104,7 @@ export default function SubmitForm() {
   };
 
   const addMember = () => {
-    if (form.members.length < 4) {
+    if (form.members.length < 5) {
       setForm((prev) => ({
         ...prev,
         members: [...prev.members, { fullName: "", email: "" }],
@@ -323,7 +323,7 @@ export default function SubmitForm() {
                 </div>
               ))}
 
-              {form.members.length < 4 && (
+              {form.members.length < 5 && (
                 <button
                   type="button"
                   onClick={addMember}
