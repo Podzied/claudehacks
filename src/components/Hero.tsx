@@ -114,10 +114,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Build the future with AI. 100 students building
-          groundbreaking projects powered by{" "}
+          100 students. 19 projects. One unforgettable weekend building with{" "}
           <span className="text-primary font-medium">Claude</span>.
-          {" "}<span className="text-primary font-medium">Submissions are now open.</span>
+          {" "}<span className="text-primary font-medium">That&apos;s a wrap on Claude Hacks 2026.</span>
         </motion.p>
 
         {/* Countdown */}
@@ -138,19 +137,19 @@ export default function Hero() {
           className="flex flex-col items-center justify-center gap-4"
         >
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-            <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold">
-              Submissions Open
+            <span className="w-2 h-2 rounded-full bg-text-muted" />
+            <span className="font-mono text-xs uppercase tracking-widest text-text-secondary font-semibold">
+              Event Concluded
             </span>
             <span className="w-px h-3 bg-border" />
-            <span className="text-xs text-text-muted font-mono">Due 11 AM Sun</span>
+            <span className="text-xs text-text-muted font-mono">April 17–19, 2026</span>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <Link
-              href="/submit"
+              href="/winners"
               className="btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2"
             >
-              Submit Project
+              See the Winners
               <span className="inline-block">&rarr;</span>
             </Link>
             <a

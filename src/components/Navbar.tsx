@@ -65,10 +65,10 @@ export default function Navbar() {
             Slides
           </a>
           <Link
-            href="/submit"
+            href="/winners"
             className="btn-glow text-white px-6 py-2.5 rounded-full text-sm font-semibold"
           >
-            Submit Project
+            See Winners
           </Link>
         </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -191,11 +192,16 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-primary-subtle" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">We&apos;re at capacity!</h2>
-            <p className="text-text-muted mb-10">All 100 spots have been filled. See you at the event!</p>
-            <span className="inline-block bg-gradient-to-r from-primary/20 to-primary-dark/20 text-primary border border-primary/30 px-10 py-4 rounded-full text-lg font-semibold cursor-default">
-              Registration Closed
-            </span>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">That&apos;s a wrap!</h2>
+            <p className="text-text-muted mb-10">
+              Claude Hacks 2026 has concluded. Check out the winning projects.
+            </p>
+            <Link
+              href="/winners"
+              className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
+            >
+              See the Winners →
+            </Link>
           </FadeIn>
         </div>
       </section>

@@ -1,25 +1,40 @@
 # Claude Hacks
 
-> A hackathon powered by Claude AI, hosted by the Claude Builders Club at The Ohio State University.
+> A hackathon powered by Claude AI, hosted by the Claude Builders Club at The Ohio State University. Claude Hacks 2026 has concluded.
 
 ## Event Details
 
 - Name: Claude Hacks
-- Dates: April 17-19, 2026
+- Dates: April 17–19, 2026 (concluded)
 - Location: Pomerene Hall 280, The Ohio State University, Columbus, OH 43210
-- Participants: 100 (registration closed, at capacity)
+- Participants: 100 students, 19 final project submissions
 - Website: https://claudehacks.com
+
+## Status
+
+The hackathon is over. Winners have been announced — see https://claudehacks.com/winners.
+
+## Winners
+
+### Open Track
+- 1st: EagleEye by Claude Mythos — AI-assisted emergency dispatch that watches highway camera feeds and triages incidents in seconds. Team: Will Campbell, Rishik Panjugala, Connor Walmsley.
+- 2nd: Tokenlens by Crtl Alt Elite — Paste any GitHub repo URL to instantly see exactly how much that codebase spends on LLM API calls. Team: Sathvik Allipuram, Harrison Hahner, Srijan Puli, Prajuval Prakash. Demo: https://osutokenlens.vercel.app/
+- 3rd: Pilot by DGX Disciples — A macOS agent that drives your iPhone for you using Claude vision and synthetic taps through iPhone Mirroring. Team: Athin Shetty, Sohum Suthar.
+
+### Sustainability Track (sponsored by IGS Energy)
+- 1st: Greenify by Awesome Dragons — Tell your house "I'm leaving" or "I'm cooking" and Claude reorganizes your energy use to match. Team: Siddarth Tummala, Kanishk Kovuru, Shukanth Jojodae, Shirish Parasa, Pathiv Medidi.
+- 2nd: EnergyWatch by Forecast Fellas — AI dispatch for home solar — when to sell, when to charge, when to pull, explained in plain English. Team: Ayush Pandit, Aaryan Sharma.
 
 ## Format
 
-- Friday 5:30-8 PM: Kickoff, check-in, food, introductions, in-person work
+- Friday 5:30–8 PM: Kickoff, check-in, food, introductions, in-person work
 - Saturday: Virtual hacking day, continue building remotely
 - Sunday 11 AM+: Project submissions due 11 AM, judging at 12 PM, food at 1 PM
 
 ## Tracks
 
 - Open: Build anything with Claude AI, no restrictions on topic or domain
-- Sustainability: Build solutions addressing environmental or sustainability challenges
+- Sustainability: Build solutions addressing environmental or sustainability challenges (sponsored by IGS Energy)
 
 ## Prizes
 
@@ -39,16 +54,15 @@
 
 ## Rules
 
-- Teams of 1-4 members, all must be registered
+- Teams of 1–5 members, all must be registered
 - All code must be written during the hackathon
-- Projects must use the Claude API meaningfully
 - Any programming language, framework, or platform allowed
-- Submissions due by 11:00 AM Sunday April 19
-- Judging criteria: Innovation, Technical Complexity, Impact, Presentation
+- Submissions were due by 11:00 AM EST Sunday April 19
+- Judging criteria: Innovation/Coolness (15), Technical Complexity (15), Impact (5), Presentation (10), Auto Code Review (5) — total /50
 
 ## Registration
 
-Registration is closed. All 100 spots have been filled.
+Registration is closed. Claude Hacks 2026 has concluded.
 
 ## Community
 

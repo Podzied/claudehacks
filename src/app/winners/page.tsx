@@ -14,7 +14,6 @@ interface Winner {
   description: string;
   highlights: string;
   members: string[];
-  github: string;
   demo?: string;
 }
 
@@ -30,7 +29,6 @@ const openWinners: Winner[] = [
     highlights:
       "React/Vite + Express/TS, ODOT camera proxy, scenario engine, multi-provider analyzer with mock fallback for demo resilience.",
     members: ["Will Campbell", "Rishik Panjugala", "Connor Walmsley"],
-    github: "https://github.com/RishiksaiP/eagle-eye",
   },
   {
     place: 2,
@@ -43,7 +41,6 @@ const openWinners: Winner[] = [
     highlights:
       "FastAPI + React + Tailwind (~6.2k LOC), 14-model pricing catalog, NDJSON streaming, SQLite caching.",
     members: ["Sathvik Allipuram", "Harrison Hahner", "Srijan Puli", "Prajuval Prakash"],
-    github: "https://github.com/Sathv1kA/LLMeter",
     demo: "https://osutokenlens.vercel.app/",
   },
   {
@@ -57,7 +54,6 @@ const openWinners: Winner[] = [
     highlights:
       "~10k+ LOC, MCP server, 6-layer memory (catalog, runtime store, vector index, hint cache, compiled snapshots, usage backplane), APScheduler.",
     members: ["Athin Shetty", "Sohum Suthar"],
-    github: "https://github.com/Paktion/pilot/tree/dev",
   },
 ];
 
@@ -79,7 +75,6 @@ const sustainabilityWinners: Winner[] = [
       "Shirish Parasa",
       "Pathiv Medidi",
     ],
-    github: "https://github.com/kanishkkov/greenify",
   },
   {
     place: 2,
@@ -92,7 +87,6 @@ const sustainabilityWinners: Winner[] = [
     highlights:
       "React + Node/Express + SQLite, bcrypt auth + Gmail verification + JWT, 3,288-line Recharts dashboard, customizable strategy modes, live power-flow diagram.",
     members: ["Ayush Pandit", "Aaryan Sharma"],
-    github: "https://github.com/AaryanS11010/EnergyWtch.git",
   },
 ];
 
@@ -162,16 +156,8 @@ function WinnerCard({ winner, index }: { winner: Winner; index: number }) {
           </div>
         </div>
 
-        <div className="mt-auto flex flex-wrap gap-2 text-xs">
-          <a
-            href={winner.github}
-            target="_blank"
-            rel="noreferrer"
-            className="px-3 py-1.5 rounded-full bg-surface border border-border hover:border-primary/40 hover:text-primary transition-colors"
-          >
-            GitHub →
-          </a>
-          {winner.demo && (
+        {winner.demo && (
+          <div className="mt-auto flex flex-wrap gap-2 text-xs">
             <a
               href={winner.demo}
               target="_blank"
@@ -180,8 +166,8 @@ function WinnerCard({ winner, index }: { winner: Winner; index: number }) {
             >
               Live demo →
             </a>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </FadeIn>
   );
