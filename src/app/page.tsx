@@ -103,16 +103,18 @@ export default function Home() {
         <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <FadeIn>
-            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Submissions are open</p>
-            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">Ready to submit?</h2>
+            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Claude Hacks 2026 wrapped</p>
+            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
+              Meet the <span className="text-gradient">winners</span>
+            </h2>
             <p className="text-text-muted mb-10 text-lg">
-              Projects are due by 11:00 AM EST on Sunday, April 19. Submit your project now!
+              Five teams across two tracks. Massive thanks to everyone who shipped.
             </p>
             <Link
-              href="/submit"
+              href="/winners"
               className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
             >
-              Submit Project
+              See the Winners →
             </Link>
           </FadeIn>
         </div>
