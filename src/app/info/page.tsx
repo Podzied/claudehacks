@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 const team = [
   { name: "Ayush Saggar", role: "Co-organizer", initials: "AS" },
   { name: "Rohan Aleti", role: "Co-organizer", initials: "RA" },
-  { name: "Nimai Bhat", role: "Co-organizer", initials: "NB" },
 ];
 
 const pillars = [

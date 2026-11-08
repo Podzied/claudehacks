@@ -6,6 +6,8 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // the kit's grid classes (start-4, start-6, start-7, start-10) collide with Tailwind's inset-inline-start utilities
+  blocklist: ["start-1", "start-2", "start-3", "start-4", "start-5", "start-6", "start-7", "start-8", "start-9", "start-10", "start-11", "start-12"],
   theme: {
     extend: {
       colors: {

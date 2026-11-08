@@ -1,122 +1,173 @@
-import Link from "next/link";
-import Hero from "@/components/Hero";
-import Schedule from "@/components/Schedule";
-import FAQ from "@/components/FAQ";
-import FadeIn from "@/components/FadeIn";
-
-const highlights = [
-  {
-    stat: "3 Days",
-    label: "Fri + Sat (virtual) + Sun",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    stat: "100",
-    label: "Participant cap",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-      </svg>
-    ),
-  },
-  {
-    stat: "$1,800+",
-    label: "In prizes",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.27.308 6.023 6.023 0 01-2.27-.308" />
-      </svg>
-    ),
-  },
-  {
-    stat: "Free",
-    label: "Swag & API credits",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
-      </svg>
-    ),
-  },
-];
+const DISCORD_URL = "https://discord.gg/Re7FCAkS";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-
-      {/* Highlights — bento grid */}
-      <section className="py-24 border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {highlights.map((h, i) => (
-              <FadeIn key={h.stat} delay={i * 0.1}>
-                <div className="gradient-border p-6 sm:p-8 rounded-2xl text-center group">
-                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">
-                    {h.icon}
-                  </div>
-                  <div className="text-2xl sm:text-4xl font-display font-bold text-gradient mb-1.5">
-                    {h.stat}
-                  </div>
-                  <div className="text-xs sm:text-sm text-text-muted font-medium">{h.label}</div>
+      {/* HERO: triptych (dealt): the headline on span-3, a collage of three sets in the middle,
+          one large button on the right line. The grain-gradient ground on the club's mark is the
+          page's one effect. */}
+      <section className="hero hero--triptych" aria-labelledby="hero-h">
+        <div className="wrap">
+          <div className="hero-text grid hero__grid">
+            <div className="span-3">
+              <h1 id="hero-h">Student AI club at Ohio State</h1>
+              <p className="hero__lead">The Claude Builders Club runs workshops and projects on Claude, and Claude Hacks, a hackathon for 100 students.</p>
+            </div>
+            <div className="ly-collage span-6 start-4" role="img" aria-label="Cards for the club, its hackathon and the winning projects">
+              <div className="ly-collage__set is-on">
+                <div className="ly-piece pc-win pc-win--lead" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
+                  <span className="lbl">The club&apos;s hackathon</span>
+                  <h4>Claude Hacks 2026</h4>
+                  <span className="team">17 to 19 April, Pomerene Hall</span>
+                  <p>100 students, 19 projects.</p>
                 </div>
-              </FadeIn>
-            ))}
+                <div className="ly-piece pc-list" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
+                  <span className="lbl">What the club does</span>
+                  <div className="it"><b>Learn</b>Claude API workshops</div>
+                  <div className="it"><b>Build</b>Projects on Claude</div>
+                  <div className="it"><b>Connect</b>Events with engineers</div>
+                </div>
+                <div className="ly-piece pc-fact" style={{ left: "4%", top: "52%", width: "38%", height: "44%" }}>
+                  <b>Open to all</b>
+                  <span>Any Ohio State student, no AI experience needed</span>
+                </div>
+                <div className="ly-piece pc-mark" style={{ left: "46%", top: "52%", width: "50%", height: "44%" }} data-fx="grain-gradient" data-fx-seed="3">
+                  <span className="pc-mark__icon"><img className="ic" src="/assets/icons/claude.svg" alt="" width="40" height="40" /></span>
+                  <strong>Claude Builders Club</strong>
+                  <span>The Ohio State University, Columbus</span>
+                </div>
+              </div>
+              <div className="ly-collage__set" aria-hidden="true">
+                <div className="ly-piece pc-win" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
+                  <span className="lbl">1st place, open track</span>
+                  <h4>EagleEye</h4>
+                  <span className="team">Claude Mythos</span>
+                  <p>Reads highway cameras with Claude vision and triages crashes in seconds.</p>
+                </div>
+                <div className="ly-piece pc-win" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
+                  <span className="lbl">1st place, sustainability track</span>
+                  <h4>Greenify</h4>
+                  <span className="team">Awesome Dragons</span>
+                  <p>A smart home agent that cuts energy use from one sentence.</p>
+                </div>
+                <div className="ly-piece pc-win" style={{ left: "4%", top: "52%", width: "50%", height: "44%" }}>
+                  <span className="lbl">2nd place, open track</span>
+                  <h4>Tokenlens</h4>
+                  <span className="team">Crtl Alt Elite</span>
+                  <p>What a repository spends on LLM calls, model by model.</p>
+                </div>
+                <div className="ly-piece pc-judges" style={{ left: "58%", top: "52%", width: "38%", height: "44%" }}>
+                  <span className="lbl">Judges from</span>
+                  <div className="row">
+                    <span className="ic-tile ic-tile--wide"><img className="ic ic-wide" src="/assets/icons/nvidia.svg" alt="NVIDIA" width="40" height="8" /></span>
+                    <span className="ic-tile"><img className="ic ic-land" src="/assets/icons/meta.svg" alt="Meta" width="40" height="27" /></span>
+                    <span className="ic-tile"><img className="ic" src="/assets/icons/google-icon.svg" alt="Google" width="39" height="40" /></span>
+                    <span className="ic-tile"><img className="ic ic-land" src="/assets/icons/aws.svg" alt="AWS" width="40" height="24" /></span>
+                  </div>
+                </div>
+              </div>
+              <div className="ly-collage__set" aria-hidden="true">
+                <div className="ly-piece pc-win" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
+                  <span className="lbl">3rd place, open track</span>
+                  <h4>Pilot</h4>
+                  <span className="team">DGX Disciples</span>
+                  <p>A macOS agent that drives your iPhone for you.</p>
+                </div>
+                <div className="ly-piece pc-win" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
+                  <span className="lbl">2nd place, sustainability track</span>
+                  <h4>EnergyWatch</h4>
+                  <span className="team">Forecast Fellas</span>
+                  <p>When to sell, charge or draw for homes with solar.</p>
+                </div>
+                <div className="ly-piece pc-list" style={{ left: "4%", top: "52%", width: "50%", height: "44%" }}>
+                  <span className="lbl">Two tracks</span>
+                  <div className="it"><b>Open</b>Anything built on Claude</div>
+                  <div className="it"><b>Sustainability</b>Energy and environment, with IGS Energy</div>
+                </div>
+                <div className="ly-piece pc-list pc-win--end" style={{ left: "58%", top: "52%", width: "38%", height: "44%" }}>
+                  <span className="lbl">Scored on</span>
+                  <div className="it"><b>Innovation</b></div>
+                  <div className="it"><b>Technical complexity</b></div>
+                  <div className="it"><b>Impact</b></div>
+                  <div className="it"><b>Presentation</b></div>
+                </div>
+              </div>
+            </div>
+            <div className="span-3 start-10 hero__cta">
+              <a className="btn btn--primary" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+                Join the Discord
+                <svg className="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path className="m-arrow__stem" d="M1 6h8" /><path className="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5" /></svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What is Claude Hacks */}
-      <section className="py-24 border-t border-border">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <FadeIn>
-            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6">
-              What is <span className="text-gradient">Claude Hacks</span>?
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="text-lg text-text-secondary leading-relaxed mb-6">
-              Claude Hacks is a hackathon where students come together to build innovative
-              projects powered by Claude AI. Whether you&apos;re a first-time hacker or a seasoned
-              developer, this is your chance to explore the frontier of AI-powered applications.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="text-lg text-text-secondary leading-relaxed">
-              Hosted by the Claude Builders Club at The Ohio State University, you&apos;ll get free
-              access to Claude API credits, mentorship from industry experts, workshops, and the
-              chance to win over $1,800 in prizes and API credits.
-            </p>
-          </FadeIn>
+      {/* CLUB: split-text-left, what the club does beside the tools its members build with */}
+      <section className="section bg-mist" id="club" aria-labelledby="club-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-5 stack-5">
+              <h2 id="club-h">Workshops and projects for students</h2>
+              <ul className="rows">
+                <li><span className="rows__name">Learn</span><p>Workshops on the Claude API.</p></li>
+                <li><span className="rows__name">Build</span><p>Projects shipped on Claude.</p></li>
+                <li><span className="rows__name">Connect</span><p>Events with engineers in the field.</p></li>
+              </ul>
+              <p className="t-small muted club__team">Run by Ayush Saggar and Rohan Aleti.</p>
+              <a className="link" href="/info">See the club page</a>
+            </div>
+            <div className="frame frame--split frame--lit span-7 start-6 picture__frame">
+              <img className="frame__img" src="/assets/sheets/tools.svg" alt="Claude, Claude Code, GitHub, Python, React and Vercel" width="628" height="502" loading="lazy" decoding="async" />
+            </div>
+          </div>
         </div>
       </section>
 
-      <Schedule />
-      <FAQ />
+      {/* HACKATHON: last year's Claude Hacks, one screen, beside the judges' marks; bg-band dealt */}
+      <section className="section bg-band" id="hackathon" aria-labelledby="hackathon-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-5 stack-5">
+              <h2 id="hackathon-h">Claude Hacks 2026</h2>
+              <p className="t-lead">100 students built with Claude at Pomerene Hall, 17 to 19 April 2026.</p>
+              <ul className="rows">
+                <li><span className="rows__name">Projects submitted</span><span className="rows__value">19</span></li>
+                <li><span className="rows__name">Winning teams</span><span className="rows__value">5, two tracks</span></li>
+                <li><span className="rows__name">Judges from</span><span className="rows__value">Six companies</span></li>
+                <li><span className="rows__name">Sponsors</span><span className="rows__value">Anthropic, IGS Energy</span></li>
+              </ul>
+              <a className="link" href="/winners">See the winners</a>
+            </div>
+            <div className="frame frame--split span-7 start-6 picture__frame">
+              <img className="frame__img" src="/assets/sheets/judges.svg" alt="The marks of NVIDIA, Meta, Google, AWS, Anthropic and Claude" width="628" height="502" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA */}
-      <section className="py-28 relative overflow-hidden border-t border-border">
-        <div className="absolute inset-0 bg-gradient-primary-subtle" />
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <FadeIn>
-            <p className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">Claude Hacks 2026 wrapped</p>
-            <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-              Meet the <span className="text-gradient">winners</span>
-            </h2>
-            <p className="text-text-muted mb-10 text-lg">
-              Five teams across two tracks. Massive thanks to everyone who shipped.
-            </p>
-            <Link
-              href="/winners"
-              className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
-            >
-              See the Winners →
-            </Link>
-          </FadeIn>
+      {/* FAQ: the page's split, every answer open */}
+      <section className="section" id="faq" aria-labelledby="faq-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-5 stack-5">
+              <h2 id="faq-h">Questions</h2>
+              <p className="faq__intro">The club answers the rest on Discord.</p>
+              <div className="frame faq__contact">
+                <img className="frame__img" src="/assets/sheets/contact.svg" alt="The Discord and Instagram marks" width="519" height="389" loading="lazy" decoding="async" />
+              </div>
+              <p className="faq__links">
+                <a className="link" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">Ask on Discord</a>
+                <a className="link faq__contact-desk" href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+              </p>
+            </div>
+            <div className="faq span-7 start-6">
+              <div className="faq__item"><h3>Who can join the club?</h3><p>Any Ohio State student. No AI experience needed.</p></div>
+              <div className="faq__item faq__item--desk"><h3>Who judged Claude Hacks?</h3><p>Engineers from NVIDIA, Meta, Google, AWS, Vertiv and IGS Energy.</p></div>
+              <div className="faq__item faq__item--desk"><h3>Where does the club announce events?</h3><p>On Discord first, then Instagram.</p></div>
+              <div className="faq__item"><h3>Will the club run Claude Hacks again?</h3><p>Yes, next year. News lands on Discord first.</p></div>
+            </div>
+          </div>
         </div>
       </section>
     </>

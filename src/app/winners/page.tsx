@@ -100,7 +100,7 @@ function WinnerCard({ winner, index }: { winner: Winner; index: number }) {
   const meta = placeMeta[winner.place];
   return (
     <FadeIn delay={index * 0.1}>
-      <div className="relative gradient-border rounded-2xl p-7 sm:p-8 h-full flex flex-col">
+      <div className="relative gradient-border rounded-2xl p-7 sm:p-8 h-full flex flex-col" id={winner.project.toLowerCase()}>
         <div
           className={`absolute -top-px left-6 right-6 h-px bg-gradient-to-r ${meta.ring}`}
           aria-hidden
