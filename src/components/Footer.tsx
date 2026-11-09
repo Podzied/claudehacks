@@ -50,7 +50,6 @@ export default function Footer() {
               <h4>Pages</h4>
               <ul>
                 <li><a href="/winners">Past winners</a></li>
-                <li><a href="/schedule">Schedule</a></li>
                 <li><a href="/sponsors">Sponsors</a></li>
                 <li><a href="/info">Club page</a></li>
               </ul>

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Winners | Claude Hacks @ Ohio State",
-  description: "Meet the winners of Claude Hacks 2026 at The Ohio State University.",
+  title: "Winners | Claude Builders Club at Ohio State",
+  description: "Meet the winners of Claude Hacks 2026, hosted by the Claude Builders Club at The Ohio State University.",
 };
 
 interface Winner {

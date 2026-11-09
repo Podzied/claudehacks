@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Club Info | Claude Hacks @ Ohio State",
+  title: "Club Info | Claude Builders Club at Ohio State",
   description: "Learn about the Claude Builders Club at The Ohio State University.",
 };
 
-const team = [
-  { name: "Ayush Saggar", role: "Co-organizer", initials: "AS" },
-  { name: "Rohan Aleti", role: "Co-organizer", initials: "RA" },
-];
+const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
 
 const pillars = [
   {
@@ -81,28 +78,6 @@ export default function InfoPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-center mb-12">Our Team</h2>
-          </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            {team.map((member, i) => (
-              <FadeIn key={member.name} delay={i * 0.08}>
-                <div className="gradient-border p-6 rounded-2xl text-center group hover:bg-surface-light/20 transition-colors">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <span className="text-lg font-display font-bold text-white">{member.initials}</span>
-                  </div>
-                  <h3 className="font-semibold text-sm">{member.name}</h3>
-                  <p className="text-xs text-text-muted mt-1">{member.role}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Join */}
       <section className="py-20 relative overflow-hidden border-t border-border">
         <div className="absolute inset-0 bg-gradient-primary-subtle" />
@@ -114,7 +89,7 @@ export default function InfoPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://groupme.com/join_group/PLACEHOLDER"
+                href={GROUPME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"

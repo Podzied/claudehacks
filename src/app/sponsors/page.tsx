@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Sponsors | Claude Hacks @ Ohio State",
-  description: "Our sponsors and partners powering Claude Hacks @ Ohio State.",
+  title: "Sponsors | Claude Builders Club at Ohio State",
+  description: "Our sponsors and partners supporting the Claude Builders Club at Ohio State.",
 };
 
 const tiers = [
