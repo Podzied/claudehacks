@@ -1,6 +1,6 @@
 const SLIDES_URL =
   "https://docs.google.com/presentation/d/1KjZ1kextPiGLsCK0yZkMbCp8jW1aVsuL/edit?usp=sharing&ouid=104681296212393054344&rtpof=true&sd=true";
-const DISCORD_URL = "https://discord.gg/Re7FCAkS";
+const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
 
 export default function Footer() {
   return (
@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="section-head--split">
             <div>
               <h2 id="close-h">Build with Claude at Ohio State</h2>
-              <p className="t-lead">Workshops, projects and the next hackathon start on the Discord.</p>
+              <p className="t-lead">Workshops, projects and events — everything starts on the GroupMe.</p>
             </div>
-            <a className="btn btn--primary" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
-              Join the Discord
+            <a className="btn btn--primary" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">
+              Join the GroupMe
               <svg className="m-arrow" viewBox="0 0 12 12" aria-hidden="true">
                 <path className="m-arrow__stem" d="M1 6h8" />
                 <path className="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5" />
@@ -28,38 +28,39 @@ export default function Footer() {
           <div className="grid">
             <div className="span-4 stack-4">
               <a className="nav__logo" href="/#top">
+                <img src="/assets/icons/claude.svg" alt="" className="nav__logo-icon" />
                 Claude Builders Club
               </a>
               <p className="footer__lede">A student AI club at The Ohio State University, building on Claude.</p>
+              <div className="footer__partners">
+                <span className="footer__partners-label">In partnership with</span>
+                <div className="footer__partners-logos">
+                  <img src="/osu-logo.svg" alt="The Ohio State University" width="40" height="35" />
+                  <img src="/anthropic-logo.svg" alt="Anthropic" width="36" height="25" />
+                </div>
+              </div>
             </div>
             <div className="span-2 footer__col">
               <h4>Club</h4>
               <ul>
                 <li><a href="/#club">What we do</a></li>
-                <li><a href="/#hackathon">Hackathon</a></li>
+                <li><a href="/#about">About</a></li>
                 <li><a href="/#faq">Questions</a></li>
               </ul>
             </div>
             <div className="span-2 footer__col">
-              <h4>Claude Hacks 2026</h4>
+              <h4>Pages</h4>
               <ul>
-                <li><a href="/winners">Winners</a></li>
+                <li><a href="/winners">Past winners</a></li>
                 <li><a href="/schedule">Schedule</a></li>
                 <li><a href="/sponsors">Sponsors</a></li>
-                <li><a href="/about">About</a></li>
-              </ul>
-            </div>
-            <div className="span-2 footer__col">
-              <h4>Material</h4>
-              <ul>
-                <li><a href={SLIDES_URL} target="_blank" rel="noopener noreferrer">Kickoff slides</a></li>
                 <li><a href="/info">Club page</a></li>
               </ul>
             </div>
             <div className="span-2 footer__col">
               <h4>Follow</h4>
               <ul>
-                <li><a href={DISCORD_URL} target="_blank" rel="noopener noreferrer">Discord</a></li>
+                <li><a href={GROUPME_URL} target="_blank" rel="noopener noreferrer">GroupMe</a></li>
                 <li><a href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </div>

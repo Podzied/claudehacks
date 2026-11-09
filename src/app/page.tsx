@@ -1,31 +1,34 @@
-const DISCORD_URL = "https://discord.gg/Re7FCAkS";
+const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
 
 export default function Home() {
   return (
     <>
-      {/* HERO: triptych (dealt): the headline on span-3, a collage of three sets in the middle,
-          one large button on the right line. The grain-gradient ground on the club's mark is the
-          page's one effect. */}
       <section className="hero hero--triptych" aria-labelledby="hero-h">
         <div className="wrap">
+          <div className="hero__brand-row">
+            <img src="/osu-logo.svg" alt="The Ohio State University" className="hero__brand-logo hero__brand-logo--osu" />
+            <span className="hero__brand-x" aria-hidden="true">&times;</span>
+            <img src="/anthropic-logo.svg" alt="Anthropic" className="hero__brand-logo hero__brand-logo--anthropic" />
+          </div>
           <div className="hero-text grid hero__grid">
             <div className="span-3">
-              <h1 id="hero-h">Student AI club at Ohio State</h1>
-              <p className="hero__lead">The Claude Builders Club runs workshops and projects on Claude, and Claude Hacks, a hackathon for 100 students.</p>
+              <h1 id="hero-h">Claude Builders<br/>Club</h1>
+              <p className="hero__lead">The student AI club at The Ohio State University. We learn, build and ship with Claude.</p>
+              <p className="hero__sub">Open to all Ohio State students. No AI experience needed.</p>
             </div>
-            <div className="ly-collage span-6 start-4" role="img" aria-label="Cards for the club, its hackathon and the winning projects">
+            <div className="ly-collage span-6 start-4" role="img" aria-label="Cards about the club and what members do">
               <div className="ly-collage__set is-on">
                 <div className="ly-piece pc-win pc-win--lead" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
-                  <span className="lbl">The club&apos;s hackathon</span>
-                  <h4>Claude Hacks 2026</h4>
-                  <span className="team">17 to 19 April, Pomerene Hall</span>
-                  <p>100 students, 19 projects.</p>
+                  <span className="lbl">What we do</span>
+                  <h4>Learn &amp; Build</h4>
+                  <span className="team">with Claude</span>
+                  <p>Workshops on the Claude API, projects shipped on Claude, and events with engineers.</p>
                 </div>
                 <div className="ly-piece pc-list" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
-                  <span className="lbl">What the club does</span>
-                  <div className="it"><b>Learn</b>Claude API workshops</div>
-                  <div className="it"><b>Build</b>Projects on Claude</div>
-                  <div className="it"><b>Connect</b>Events with engineers</div>
+                  <span className="lbl">Club activities</span>
+                  <div className="it"><b>Workshops</b>Claude API &amp; Claude Code</div>
+                  <div className="it"><b>Projects</b>Ship real apps on Claude</div>
+                  <div className="it"><b>Events</b>Meet engineers in the field</div>
                 </div>
                 <div className="ly-piece pc-fact" style={{ left: "4%", top: "52%", width: "38%", height: "44%" }}>
                   <b>Open to all</b>
@@ -38,66 +41,32 @@ export default function Home() {
                 </div>
               </div>
               <div className="ly-collage__set" aria-hidden="true">
-                <div className="ly-piece pc-win" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
-                  <span className="lbl">1st place, open track</span>
-                  <h4>EagleEye</h4>
-                  <span className="team">Claude Mythos</span>
-                  <p>Reads highway cameras with Claude vision and triages crashes in seconds.</p>
+                <div className="ly-piece pc-win pc-win--lead" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
+                  <span className="lbl">Built by members</span>
+                  <h4>Real Projects</h4>
+                  <span className="team">Shipped on Claude</span>
+                  <p>From AI agents to creative tools, our members build and ship real applications.</p>
                 </div>
-                <div className="ly-piece pc-win" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
-                  <span className="lbl">1st place, sustainability track</span>
-                  <h4>Greenify</h4>
-                  <span className="team">Awesome Dragons</span>
-                  <p>A smart home agent that cuts energy use from one sentence.</p>
+                <div className="ly-piece pc-list" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
+                  <span className="lbl">Tools we use</span>
+                  <div className="it"><b>Claude API</b>Build intelligent apps</div>
+                  <div className="it"><b>Claude Code</b>AI-powered development</div>
+                  <div className="it"><b>Python &amp; React</b>Full-stack projects</div>
                 </div>
                 <div className="ly-piece pc-win" style={{ left: "4%", top: "52%", width: "50%", height: "44%" }}>
-                  <span className="lbl">2nd place, open track</span>
-                  <h4>Tokenlens</h4>
-                  <span className="team">Crtl Alt Elite</span>
-                  <p>What a repository spends on LLM calls, model by model.</p>
+                  <span className="lbl">Community</span>
+                  <h4>100+ Members</h4>
+                  <span className="team">and growing</span>
+                  <p>Students from every major, learning to build with AI together.</p>
                 </div>
                 <div className="ly-piece pc-judges" style={{ left: "58%", top: "52%", width: "38%", height: "44%" }}>
-                  <span className="lbl">Judges from</span>
+                  <span className="lbl">Powered by</span>
                   <div className="row">
-                    <span className="ic-tile ic-tile--wide"><img className="ic ic-wide" src="/assets/icons/nvidia.svg" alt="NVIDIA" width="40" height="8" /></span>
-                    <span className="ic-tile"><img className="ic ic-land" src="/assets/icons/meta.svg" alt="Meta" width="40" height="27" /></span>
-                    <span className="ic-tile"><img className="ic" src="/assets/icons/google-icon.svg" alt="Google" width="39" height="40" /></span>
-                    <span className="ic-tile"><img className="ic ic-land" src="/assets/icons/aws.svg" alt="AWS" width="40" height="24" /></span>
+                    <span className="ic-tile"><img className="ic" src="/assets/icons/claude.svg" alt="Claude" width="40" height="40" /></span>
+                    <span className="ic-tile"><img className="ic ic-land" src="/assets/icons/anthropic.svg" alt="Anthropic" width="40" height="27" /></span>
                   </div>
                 </div>
               </div>
-              <div className="ly-collage__set" aria-hidden="true">
-                <div className="ly-piece pc-win" style={{ left: "4%", top: "6%", width: "48%", height: "42%" }}>
-                  <span className="lbl">3rd place, open track</span>
-                  <h4>Pilot</h4>
-                  <span className="team">DGX Disciples</span>
-                  <p>A macOS agent that drives your iPhone for you.</p>
-                </div>
-                <div className="ly-piece pc-win" style={{ left: "56%", top: "6%", width: "40%", height: "42%" }}>
-                  <span className="lbl">2nd place, sustainability track</span>
-                  <h4>EnergyWatch</h4>
-                  <span className="team">Forecast Fellas</span>
-                  <p>When to sell, charge or draw for homes with solar.</p>
-                </div>
-                <div className="ly-piece pc-list" style={{ left: "4%", top: "52%", width: "50%", height: "44%" }}>
-                  <span className="lbl">Two tracks</span>
-                  <div className="it"><b>Open</b>Anything built on Claude</div>
-                  <div className="it"><b>Sustainability</b>Energy and environment, with IGS Energy</div>
-                </div>
-                <div className="ly-piece pc-list pc-win--end" style={{ left: "58%", top: "52%", width: "38%", height: "44%" }}>
-                  <span className="lbl">Scored on</span>
-                  <div className="it"><b>Innovation</b></div>
-                  <div className="it"><b>Technical complexity</b></div>
-                  <div className="it"><b>Impact</b></div>
-                  <div className="it"><b>Presentation</b></div>
-                </div>
-              </div>
-            </div>
-            <div className="span-3 start-10 hero__cta">
-              <a className="btn btn--primary" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
-                Join the Discord
-                <svg className="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path className="m-arrow__stem" d="M1 6h8" /><path className="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5" /></svg>
-              </a>
             </div>
           </div>
         </div>
@@ -114,7 +83,6 @@ export default function Home() {
                 <li><span className="rows__name">Build</span><p>Projects shipped on Claude.</p></li>
                 <li><span className="rows__name">Connect</span><p>Events with engineers in the field.</p></li>
               </ul>
-              <p className="t-small muted club__team">Run by Ayush Saggar and Rohan Aleti.</p>
               <a className="link" href="/info">See the club page</a>
             </div>
             <div className="frame frame--split frame--lit span-7 start-6 picture__frame">
@@ -124,20 +92,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HACKATHON: last year's Claude Hacks, one screen, beside the judges' marks; bg-band dealt */}
-      <section className="section bg-band" id="hackathon" aria-labelledby="hackathon-h">
+      {/* ABOUT: who we are and how to get involved */}
+      <section className="section bg-band" id="about" aria-labelledby="about-h">
         <div className="wrap">
           <div className="grid">
             <div className="span-5 stack-5">
-              <h2 id="hackathon-h">Claude Hacks 2026</h2>
-              <p className="t-lead">100 students built with Claude at Pomerene Hall, 17 to 19 April 2026.</p>
+              <h2 id="about-h">About the club</h2>
+              <p className="t-lead">The Claude Builders Club is a student organization at The Ohio State University, supported by Anthropic.</p>
               <ul className="rows">
-                <li><span className="rows__name">Projects submitted</span><span className="rows__value">19</span></li>
-                <li><span className="rows__name">Winning teams</span><span className="rows__value">5, two tracks</span></li>
-                <li><span className="rows__name">Judges from</span><span className="rows__value">Six companies</span></li>
-                <li><span className="rows__name">Sponsors</span><span className="rows__value">Anthropic, IGS Energy</span></li>
+                <li><span className="rows__name">Founded</span><span className="rows__value">2025</span></li>
+                <li><span className="rows__name">Members</span><span className="rows__value">100+ students</span></li>
+                <li><span className="rows__name">Location</span><span className="rows__value">Columbus, Ohio</span></li>
+                <li><span className="rows__name">Open to</span><span className="rows__value">All OSU students</span></li>
               </ul>
-              <a className="link" href="/winners">See the winners</a>
+              <a className="link" href="/winners">See past hackathon winners</a>
             </div>
             <div className="frame frame--split span-7 start-6 picture__frame">
               <img className="frame__img" src="/assets/sheets/judges.svg" alt="The marks of NVIDIA, Meta, Google, AWS, Anthropic and Claude" width="628" height="502" loading="lazy" decoding="async" />
@@ -146,26 +114,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ: the page's split, every answer open */}
+      {/* FAQ */}
       <section className="section" id="faq" aria-labelledby="faq-h">
         <div className="wrap">
           <div className="grid">
             <div className="span-5 stack-5">
               <h2 id="faq-h">Questions</h2>
-              <p className="faq__intro">The club answers the rest on Discord.</p>
+              <p className="faq__intro">The club answers the rest on GroupMe.</p>
               <div className="frame faq__contact">
-                <img className="frame__img" src="/assets/sheets/contact.svg" alt="The Discord and Instagram marks" width="519" height="389" loading="lazy" decoding="async" />
+                <img className="frame__img" src="/assets/sheets/contact.svg" alt="The GroupMe and Instagram marks" width="519" height="389" loading="lazy" decoding="async" />
               </div>
               <p className="faq__links">
-                <a className="link" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">Ask on Discord</a>
+                <a className="link" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">Ask on GroupMe</a>
                 <a className="link faq__contact-desk" href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
               </p>
             </div>
             <div className="faq span-7 start-6">
               <div className="faq__item"><h3>Who can join the club?</h3><p>Any Ohio State student. No AI experience needed.</p></div>
-              <div className="faq__item faq__item--desk"><h3>Who judged Claude Hacks?</h3><p>Engineers from NVIDIA, Meta, Google, AWS, Vertiv and IGS Energy.</p></div>
-              <div className="faq__item faq__item--desk"><h3>Where does the club announce events?</h3><p>On Discord first, then Instagram.</p></div>
-              <div className="faq__item"><h3>Will the club run Claude Hacks again?</h3><p>Yes, next year. News lands on Discord first.</p></div>
+              <div className="faq__item faq__item--desk"><h3>What is Claude?</h3><p>Claude is an AI assistant made by Anthropic. We build apps and tools on top of it.</p></div>
+              <div className="faq__item faq__item--desk"><h3>Where does the club announce events?</h3><p>On GroupMe first, then Instagram.</p></div>
+              <div className="faq__item"><h3>How do I get started?</h3><p>Join our GroupMe and come to the next workshop. We&apos;ll help you from there.</p></div>
             </div>
           </div>
         </div>

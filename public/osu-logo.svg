@@ -1,23 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
-  <!-- Block O - chunky octagon, taller than wide, with white cutout -->
-  <g transform="translate(150, 80)">
-    <!-- Scarlet outer block (octagonal) with subtle gray outline -->
-    <path d="M-26,-68 L26,-68 L60,-34 L60,34 L26,68 L-26,68 L-60,34 L-60,-34 Z"
-          fill="#BB0000" stroke="#4A4A4A" stroke-width="1.5"/>
-    <!-- White inner cutout (same octagonal shape, scaled down ~50%) with gray outline -->
-    <path d="M-13,-34 L13,-34 L30,-17 L30,17 L13,34 L-13,34 L-30,17 L-30,-17 Z"
-          fill="white" stroke="#4A4A4A" stroke-width="1.5"/>
-  </g>
-
-  <!-- Top horizontal rule -->
-  <line x1="30" y1="178" x2="270" y2="178" stroke="#666666" stroke-width="2"/>
-
-  <!-- THE OHIO STATE -->
-  <text x="150" y="208" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#666666" letter-spacing="3">THE OHIO STATE</text>
-
-  <!-- UNIVERSITY -->
-  <text x="150" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#666666" letter-spacing="3">UNIVERSITY</text>
-
-  <!-- Bottom horizontal rule -->
-  <line x1="60" y1="252" x2="240" y2="252" stroke="#666666" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 86">
+  <path fill="#BA0C2F" d="M17.1,26.8l5.5-5.5h17.8l5.5,5.5v36.6l-5.5,5.5H22.6l-5.5-5.5V26.8zM59.8,20.8L46.2,7.3H16.8L3.2,20.9v48.3l13.6,13.6h29.4l13.6-13.5V20.8z"/>
+  <path fill="#666" d="M1.4,70V19.9L16.2,5.1l30.9,0l14.5,14.6l0,50.5L46.9,84.8l-30.8,0L1.4,70zM15.5,3.7L0,19.2v51.4l15.4,15.6h32.1l15.5-15.6V19.2L47.7,3.7H15.5z"/>
+  <path fill="#666" d="M24.2,24.8h14.6l3.5,3.5v33.6L39,65.3H24.1L20.8,62V28.3L24.2,24.8zM43.7,27.8l-4.4-4.4H23.6l-4.3,4.3v34.8l4.2,4.2h16l4.2-4.2V27.8z"/>
 </svg>

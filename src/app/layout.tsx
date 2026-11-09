@@ -8,21 +8,24 @@ import Footer from "@/components/Footer";
 export const viewport = { width: "device-width", initialScale: 1, viewportFit: "cover" };
 
 export const metadata: Metadata = {
-  title: "Claude Builders Club: student AI club at Ohio State",
+  title: "Claude Builders Club | Student AI Club at Ohio State",
   description:
-    "The Claude Builders Club is a student AI club at The Ohio State University: workshops, projects and a yearly hackathon built on Claude. Claude Hacks 2026 drew 100 students.",
+    "The Claude Builders Club is a student AI club at The Ohio State University. We run workshops, build projects and ship apps on Claude.",
   openGraph: {
     title: "Claude Builders Club at Ohio State",
     description:
-      "A student AI club at The Ohio State University: workshops, projects and the Claude Hacks hackathon.",
+      "A student AI club at The Ohio State University. Learn, build and ship with Claude.",
     type: "website",
-    siteName: "Claude Hacks",
+    siteName: "Claude Builders Club",
   },
   twitter: {
     card: "summary_large_image",
     title: "Claude Builders Club at Ohio State",
     description:
-      "A student AI club at The Ohio State University: workshops, projects and the Claude Hacks hackathon.",
+      "A student AI club at The Ohio State University. Learn, build and ship with Claude.",
+  },
+  icons: {
+    icon: "/assets/icons/claude.svg",
   },
   metadataBase: new URL("https://claudehacks.com"),
 };
