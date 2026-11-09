@@ -1,114 +1,72 @@
 import type { Metadata } from "next";
-import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Club Info | Claude Builders Club at Ohio State",
   description: "Learn about the Claude Builders Club at The Ohio State University.",
 };
 
-const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
-
-const pillars = [
-  {
-    title: "Learn",
-    desc: "Weekly workshops covering Claude API, prompt engineering, and AI development best practices.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-      </svg>
-    ),
-  },
-  {
-    title: "Build",
-    desc: "Hands-on projects where members build real applications powered by Claude AI.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Connect",
-    desc: "Networking events with industry professionals and fellow AI enthusiasts.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-      </svg>
-    ),
-  },
-];
-
 export default function InfoPage() {
   return (
     <>
-      {/* Header */}
-      <section className="py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <FadeIn>
-            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-primary flex items-center justify-center">
-              <span className="text-white font-display font-bold text-xl">CB</span>
+      {/* Hero */}
+      <section className="section bg-mist" aria-labelledby="info-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-5 stack-5">
+              <h1 id="info-h">Claude Builders Club</h1>
+              <p className="t-lead">A student organization at The Ohio State University dedicated to building with Claude AI.</p>
+              <ul className="rows">
+                <li><span className="rows__name">Founded</span><span className="rows__value">2025</span></li>
+                <li><span className="rows__name">Members</span><span className="rows__value">100+ students</span></li>
+                <li><span className="rows__name">Location</span><span className="rows__value">Columbus, Ohio</span></li>
+              </ul>
             </div>
-            <h1 className="text-5xl sm:text-6xl font-display font-bold mb-6">
-              Claude Builders <span className="text-gradient">Club</span>
-            </h1>
-            <p className="text-lg text-text-secondary leading-relaxed">
-              A student organization at The Ohio State University
-              dedicated to exploring and building with Claude AI.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Pillars */}
-      <section className="py-20 border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            {pillars.map((p, i) => (
-              <FadeIn key={p.title} delay={i * 0.1}>
-                <div className="gradient-border p-6 rounded-2xl text-center h-full group hover:bg-surface-light/20 transition-colors">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    {p.icon}
-                  </div>
-                  <h3 className="font-display font-bold text-xl mb-3">{p.title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{p.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            <div className="frame frame--split frame--lit span-7 start-6 picture__frame">
+              <img className="frame__img" src="/assets/sheets/tools.svg" alt="Claude, Claude Code, GitHub, Python, React and Vercel" width="628" height="502" loading="lazy" decoding="async" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Join */}
-      <section className="py-20 relative overflow-hidden border-t border-border">
-        <div className="absolute inset-0 bg-gradient-primary-subtle" />
-        <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">Join the Club</h2>
-            <p className="text-text-muted mb-10">
-              Interested in AI development? Join the Claude Builders Club.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={GROUPME_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block btn-glow text-white px-10 py-4 rounded-full text-lg font-semibold"
-              >
-                Join our GroupMe
-              </a>
-              <a
-                href="https://instagram.com/claudeatohiostate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 glass text-text-secondary px-8 py-4 rounded-full text-lg font-medium hover:text-text transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-                @claudeatohiostate
-              </a>
+      {/* What we do */}
+      <section className="section" aria-labelledby="pillars-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-5 stack-5">
+              <h2 id="pillars-h">What we do</h2>
+              <p className="t-lead">Three things, every semester.</p>
             </div>
-          </FadeIn>
+          </div>
+          <ul className="rows" style={{ marginTop: "var(--head-gap)", maxWidth: 640 }}>
+            <li>
+              <span className="rows__name">Learn</span>
+              <span className="rows__value">Weekly workshops covering the Claude API, prompt engineering, and AI development.</span>
+            </li>
+            <li>
+              <span className="rows__name">Build</span>
+              <span className="rows__value">Hands-on projects where members build real applications powered by Claude.</span>
+            </li>
+            <li>
+              <span className="rows__name">Connect</span>
+              <span className="rows__value">Events with industry professionals and fellow students interested in AI.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Get involved */}
+      <section className="section bg-band" aria-labelledby="join-h">
+        <div className="wrap">
+          <div className="grid">
+            <div className="span-7 stack-5">
+              <h2 id="join-h">Get involved</h2>
+              <p className="t-lead">Open to all Ohio State students. Come to a meeting, or submit a project you&apos;re already working on.</p>
+              <p className="faq__links">
+                <a className="link" href="/submit">Submit a project</a>
+                <a className="link" href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>

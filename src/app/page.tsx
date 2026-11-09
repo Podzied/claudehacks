@@ -1,5 +1,3 @@
-const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
-
 export default function Home() {
   return (
     <>
@@ -72,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CLUB: split-text-left, what the club does beside the tools its members build with */}
+      {/* CLUB */}
       <section className="section bg-mist" id="club" aria-labelledby="club-h">
         <div className="wrap">
           <div className="grid">
@@ -92,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT: who we are and how to get involved */}
+      {/* ABOUT */}
       <section className="section bg-band" id="about" aria-labelledby="about-h">
         <div className="wrap">
           <div className="grid">
@@ -120,20 +118,19 @@ export default function Home() {
           <div className="grid">
             <div className="span-5 stack-5">
               <h2 id="faq-h">Questions</h2>
-              <p className="faq__intro">The club answers the rest on GroupMe.</p>
+              <p className="faq__intro">Have a question? Reach out on Instagram or come to a meeting.</p>
               <div className="frame faq__contact">
-                <img className="frame__img" src="/assets/sheets/contact.svg" alt="The GroupMe and Instagram marks" width="519" height="389" loading="lazy" decoding="async" />
+                <img className="frame__img" src="/assets/sheets/contact.svg" alt="Instagram" width="519" height="389" loading="lazy" decoding="async" />
               </div>
               <p className="faq__links">
-                <a className="link" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">Ask on GroupMe</a>
-                <a className="link faq__contact-desk" href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+                <a className="link" href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
               </p>
             </div>
             <div className="faq span-7 start-6">
               <div className="faq__item"><h3>Who can join the club?</h3><p>Any Ohio State student. No AI experience needed.</p></div>
               <div className="faq__item faq__item--desk"><h3>What is Claude?</h3><p>Claude is an AI assistant made by Anthropic. We build apps and tools on top of it.</p></div>
-              <div className="faq__item faq__item--desk"><h3>Where does the club announce events?</h3><p>On GroupMe first, then Instagram.</p></div>
-              <div className="faq__item"><h3>How do I get started?</h3><p>Join our GroupMe and come to the next workshop. We&apos;ll help you from there.</p></div>
+              <div className="faq__item faq__item--desk"><h3>How do I hear about events?</h3><p>Follow us on Instagram for announcements and updates.</p></div>
+              <div className="faq__item"><h3>How do I get started?</h3><p>Come to the next workshop. We&apos;ll help you from there.</p></div>
             </div>
           </div>
         </div>

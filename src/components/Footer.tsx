@@ -1,5 +1,3 @@
-const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
-
 export default function Footer() {
   return (
     <footer className="footer closing footer--statement g2m" id="contact" aria-labelledby="close-h">
@@ -8,10 +6,10 @@ export default function Footer() {
           <div className="section-head--split">
             <div>
               <h2 id="close-h">Build with Claude at Ohio State</h2>
-              <p className="t-lead">Workshops, projects and events — everything starts on the GroupMe.</p>
+              <p className="t-lead">Workshops, projects and community for students building with AI.</p>
             </div>
-            <a className="btn btn--primary" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">
-              Join the GroupMe
+            <a className="btn btn--primary" href="/submit">
+              Submit a project
               <svg className="m-arrow" viewBox="0 0 12 12" aria-hidden="true">
                 <path className="m-arrow__stem" d="M1 6h8" />
                 <path className="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5" />
@@ -49,6 +47,8 @@ export default function Footer() {
             <div className="span-2 footer__col">
               <h4>Pages</h4>
               <ul>
+                <li><a href="/showcase">Showcase</a></li>
+                <li><a href="/submit">Submit a project</a></li>
                 <li><a href="/winners">Past winners</a></li>
                 <li><a href="/sponsors">Sponsors</a></li>
                 <li><a href="/info">Club page</a></li>
@@ -57,7 +57,6 @@ export default function Footer() {
             <div className="span-2 footer__col">
               <h4>Follow</h4>
               <ul>
-                <li><a href={GROUPME_URL} target="_blank" rel="noopener noreferrer">GroupMe</a></li>
                 <li><a href="https://instagram.com/claudeatohiostate" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </div>

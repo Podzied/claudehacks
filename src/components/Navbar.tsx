@@ -1,5 +1,3 @@
-export const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
-
 export default function Navbar() {
   return (
     <header className="nav nav--centre">
@@ -23,6 +21,11 @@ export default function Navbar() {
             </a>
           </div>
           <div className="nav__item">
+            <a className="nav__link" href="/showcase">
+              Showcase
+            </a>
+          </div>
+          <div className="nav__item">
             <a className="nav__link" href="/winners">
               Winners
             </a>
@@ -34,8 +37,8 @@ export default function Navbar() {
           </div>
         </nav>
         <div className="nav__actions">
-          <a className="btn btn--primary" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">
-            Join the GroupMe
+          <a className="btn btn--primary" href="/submit">
+            Submit a project
           </a>
         </div>
         <button className="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
