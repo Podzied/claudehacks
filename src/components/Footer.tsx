@@ -1,5 +1,3 @@
-const SLIDES_URL =
-  "https://docs.google.com/presentation/d/1KjZ1kextPiGLsCK0yZkMbCp8jW1aVsuL/edit?usp=sharing&ouid=104681296212393054344&rtpof=true&sd=true";
 const GROUPME_URL = "https://groupme.com/join_group/110067294/Y3bFkjX6";
 
 export default function Footer() {
